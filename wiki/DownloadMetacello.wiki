@@ -1,0 +1,9 @@
+To get version 0.15:
+
+  # Load Metacello-All-dkh.10 from [http://seaside.gemstone.com/ss/metacello Metacello GemSource project] (loads Metacello-Core, Metacello-MC, MetacelloProject and OB-Metacello - note that Metacello-All needs to have OB loaded).
+  # Execute the following expression in a workspace to load the latest alpha:
+{{{
+     MetacelloMetacelloProject updateProject.
+     MetacelloMetacelloProject latestVersion load.
+}}}
+  # Delete the Metacello-All package. 
