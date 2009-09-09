@@ -1,0 +1,7 @@
+#summary Metacello Tutorial
+
+First bootstrap Metacello into your image, following the DownloadMetacello instructions. Then execute the following expression:
+{{{
+    MetacelloMetacelloProject latestVersion: load: 'Tutorial'. 
+}}}
+Open two browsers on the MetacelloTutorialProject class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson16OtherExamples.
