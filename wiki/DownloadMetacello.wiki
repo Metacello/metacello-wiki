@@ -1,4 +1,4 @@
-#summary Download instructions for bootstrapping Metacello in a [http://www.squeak.org/ Squeak] or [http://www.pharo-project.org/ Pharo] image
+#summary Download instructions for bootstrapping Metacello in a Squeak or Pharo image
 To get version 0.15:
 
   # Load Metacello-All-dkh.10 from [http://seaside.gemstone.com/ss/metacello Metacello GemSource project] (loads Metacello-Core, Metacello-MC, MetacelloProject and OB-Metacello - note that Metacello-All needs to have OB loaded).
