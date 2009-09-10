@@ -1,4 +1,5 @@
 #summary Metacello Tutorial
+#labels Featured
 
 First bootstrap Metacello into your image, following the DownloadMetacello instructions. Then execute the following expression:
 {{{
