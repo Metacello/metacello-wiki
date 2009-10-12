@@ -1,4 +1,3 @@
 #summary Metacello Tutorial
-#labels Featured
 
 The Tutorial for the  1.0-beta is under development. See [APIReference API reference].
