@@ -19,12 +19,12 @@ baseline10: spec
       project: 'UI Support' with: [              "Create or update a project reference"
         "One or more of the following attributes may be defined or changed"
         spec
-"REQUIRED"    className: 'UIConfig';             "Name of config class (i.e., MetacelloReferenceBasicConfig)"
+          className: 'UIConfig';             "Name of config class (i.e., MetacelloReferenceBasicConfig)"
           versionString: '1.0';                  "Version of project to be loaded"
           operator: #~>;                         "Version comparison operator #= #~= #> #< #>= #<= #~> "
           loads: { 'UI-Core'. };                 "List of packages to be loaded from project"
-"REQUIRED"    file: 'UI-Configuration';          "Name of package containing the config"
-"REQUIRED"    repository: 'http://www.example.com/r' ];  "Repository where package resides"
+          file: 'UI-Configuration';          "Name of package containing the config"
+          repository: 'http://www.example.com/r' ];  "Repository where package resides"
       project: 'UI Support' overrides: [          "Create a new project reference to replace existing project reference"
         "One or more of the following attributes may be defined"
         spec
