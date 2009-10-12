@@ -5,11 +5,11 @@ To get version 1.0-bata.1:
   # Load Metacello-Configuration-dkh.32 from http://seaside.gemstone.com/ss/metacello   
   # Execute the following expression in a workspace:
 {{{
-     MetacelloMetacelloProject loadLatestVersion.
+     MetacelloConfiguration loadLatestVersion.
 }}}
   # If you want to have the OB tools loaded execute this expression:
 {{{
-     MetacelloMetacelloProject loadTools.
+     MetacelloConfiguration loadTools.
 }}}
 
 The Tutorial is still under development, but you can look at MetacelloReferenceConfig which lists the full API for Metacello configurations. Also the MetacelloConfiguration is a good example of the using the API:)
