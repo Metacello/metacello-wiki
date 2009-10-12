@@ -1,4 +1,4 @@
 #summary Metacello Tutorial
 #labels Featured
 
-the Tutorial for the  1.0-beta is under development
+The Tutorial for the  1.0-beta is under development. See [API Reference]
