@@ -1,7 +1,7 @@
 #Listing of full Metacello configuration API
 
 {{{
-}}}baseline10: spec
+baseline10: spec
   <version: '1.0-baseline'>
 
   spec for: #common do: [
@@ -81,3 +81,4 @@
       group: 'default'
         overrides:  { 'Example-Core'. 'Example-Tests'. };  "Create the group 'default' to replace existing group, consisting of 'Example-Core' and 'Example-AddOn'"
       removeGroup: 'default' ].                  "Remove the group 'default'"
+}}}
