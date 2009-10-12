@@ -1,11 +1,15 @@
 #summary Download instructions for bootstrapping Metacello in a Squeak or Pharo image
 #labels Featured
-To get version 0.15:
+To get version 1.0-bata.1:
 
-  # Load Metacello-All-dkh.10 from [http://seaside.gemstone.com/ss/metacello Metacello GemSource project] (loads Metacello-Core, Metacello-MC, MetacelloProject and OB-Metacello - note that Metacello-All needs to have OB loaded).
-  # Execute the following expression in a workspace to load the latest alpha:
+  # Load Metacello-Configuration-dkh.32 from http://seaside.gemstone.com/ss/metacello   
+  # Execute the following expression in a workspace:
 {{{
-     MetacelloMetacelloProject updateProject.
-     MetacelloMetacelloProject latestVersion load.
+     MetacelloMetacelloProject loadLatestVersion.
 }}}
-  # Delete the Metacello-All package. 
+  # If you want to have the OB tools loaded execute this expression:
+{{{
+     MetacelloMetacelloProject loadTools.
+}}}
+
+The Tutorial is still under development, but you can look at MetacelloReferenceConfig which lists the full API for Metacello configurations. Also the MetacelloConfiguration is a good example of the using the API:)
