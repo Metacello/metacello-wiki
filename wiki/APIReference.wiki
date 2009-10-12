@@ -1,4 +1,5 @@
 #summary Listing of full Metacello configuration API
+#labels Featured
 
 The colorization is funky, but I think it's better than nothing:)
 
