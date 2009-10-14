@@ -1,4 +1,5 @@
 #summary Metacello Tutorial
+#labels Featured
 
 To run the Tutorial, first [DownloadMetacello load] Metacello into your image.
 
