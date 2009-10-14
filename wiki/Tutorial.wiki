@@ -1,6 +1,6 @@
 #summary Metacello Tutorial
 
-To run the Tutorial, first [DownloadMetacello load] Metacello into your in=mage.
+To run the Tutorial, first [DownloadMetacello load] Metacello into your image.
 
 Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13 to understand the configuration API.
 
