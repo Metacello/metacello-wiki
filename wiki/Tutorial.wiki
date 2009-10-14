@@ -2,8 +2,8 @@
 
 To run the Tutorial, first [DownloadMetacello load] Metacello into your image.
 
-Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13 to understand the configuration API.
+Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13.
 
-Visit [APIReference API reference page] for an overview of the full configuration API.
+After taking the tutorial, visit [APIReference API reference page] for an overview of the full configuration API.
 
 To create your own Metacello configuration, copy the class MetacelloConfigTemplate to your own configuration class, add your own #baseline: and #version: methods and you are off to the races. 
