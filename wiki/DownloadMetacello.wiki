@@ -1,8 +1,8 @@
 #summary Download instructions for bootstrapping Metacello in a Squeak or Pharo image
 #labels Featured
-To install version 1.0-beta.3:
+To install version 1.0-beta.4:
 
-  # Load Metacello-Configuration-dkh.50 from http://seaside.gemstone.com/ss/metacello   
+  # Load the latest version of the package Metacello-Configuration from http://seaside.gemstone.com/ss/metacello   
   # Execute the following expression in a workspace:
 {{{
      MetacelloConfiguration loadLatestVersion.
@@ -14,4 +14,4 @@ Note that #loadLatestVersion loads in the OB-based tools for Metacello along wit
 
 Don't forget to check out the [Tutorial] and [APIReference API reference].
 
-Version 1.0-beta.3 runs on [http://www.pharo-project.org/home Pharo] and [http://www.squeak.org/ Squeak]. Porting to  [http://seaside.gemstone.com/ GLASS] as you read this.
+Version 1.0-beta.4 runs on [http://www.pharo-project.org/home Pharo] and [http://www.squeak.org/ Squeak]. Porting to  [http://seaside.gemstone.com/ GLASS] as you read this.
