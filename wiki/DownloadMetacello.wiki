@@ -1,6 +1,6 @@
 #summary Download instructions for bootstrapping Metacello in a Squeak or Pharo image
 #labels Featured
-To install version 1.0-beta.7:
+To install version 1.0-beta.9:
 
   # Load the latest version of the package Metacello-Configuration from http://seaside.gemstone.com/ss/metacello   
   # Execute the following expression in a workspace:
@@ -14,4 +14,4 @@ Note that #loadLatestVersion loads in the OB-based tools for Metacello along wit
 
 Don't forget to check out the [Tutorial] and [APIReference API reference].
 
-Version 1.0-beta.7 runs on [http://www.pharo-project.org/home Pharo], [http://www.squeak.org/ Squeak] and [http://seaside.gemstone.com/ GLASS] (wait for an announcement on my [http://gemstonesoup.wordpress.com/category/metacello/ blog] for instructions on loading Metacello into GLASS).
+Version 1.0-beta.9 runs on [http://www.pharo-project.org/home Pharo], [http://www.squeak.org/ Squeak] and [http://seaside.gemstone.com/ GLASS] (wait for an announcement on my [http://gemstonesoup.wordpress.com/category/metacello/ blog] for instructions on loading Metacello into GLASS).
