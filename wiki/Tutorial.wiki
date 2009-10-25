@@ -3,7 +3,7 @@
 
 To run the Tutorial, first [DownloadMetacello load] Metacello into your image.
 
-Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13, then read lesson07 through lesson13 in the MetacelloProjectRefTutorialConfig class for a tutorial covering project references.
+Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13, then read lesson07 through lesson14 in the MetacelloProjectRefTutorialConfig class for a tutorial covering project references.
 
 After taking the tutorial, visit [APIReference API reference page] for an overview of the full configuration API.
 
