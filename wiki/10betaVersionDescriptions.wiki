@@ -2,6 +2,22 @@
 #Description of the 1.0-beta releases
 
 ===1.0-beta.9====
+  *'dkh 10/25/2009 11:34'
+  * GemStone-specific mods
+  * improve error message for missing import
+  * fix a couple of bugs in spawn new version
+  * if versionString is not specified in project reference, use #latestVersion of the project
+  * 'Update Package Method' command updates the versionString for project reference to #currentVersion of the project
+  * 'Spawn New Version' command spawns entry for proejct reference using #currentVersion of the project
+  * latest version of configuration package is loaded if the project reference refers to a version whose blessing is #development
+  * refactor #saveProject
+  * add #transact: to platform to support GemStone optional transactions
+  * define querying protocol (public access)
+  * use literal arrays instead of array constructors _everywhere_
+  * clean up printing
+  * refine querying API
+  * extend tutorial to cover querying API
+===1.0-beta.9====
   * second cut at package query api for MetacellMCVersion requested by Simon, Read the method comments for documentation:
     * groups
     * packages
