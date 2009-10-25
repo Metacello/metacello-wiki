@@ -9,7 +9,7 @@ baseline10: spec
   
   spec for: #common do: [
     spec blessing: #baseline.                  "#development, #baseline, #release, 
-                                                #beta, etc."
+                                     #beta, etc."
     spec description: 'Descriptive comment'.
     spec author: 'dkh'.
     spec timestamp: '10/7/2009 14:40'.
@@ -27,9 +27,11 @@ baseline10: spec
         "One or more of the following attributes may be defined or changed"
         spec
           className: 'UIConfig';                 "Name of config class (i.e., MetacelloReferenceBasicConfig)" 
-          versionString: '1.0';                  "Version of project to be loaded"
+          versionString: '1.0';                  "Version of project to be loaded. if the 
+                                                  versionString is not specified, then the 
+                                                  latest version of the project is used."
           operator: #~>;                         "Version comparison operator #= #~= #> #< #>= #<= #~> "
-          loads: { 'UI-Core'. };                 "List of packages to be loaded from project"
+          loads: #('UI-Core' );                  "List of packages to be loaded from project"
           file: 'UI-Configuration';              "Name of package containing the config"
           repository: 'http://www.example.com/r' ];  "Repository where package resides"
       project: 'UI Support' overrides: [         "Create a new project reference to replace existing project reference"
@@ -38,60 +40,59 @@ baseline10: spec
           className: 'UIConfigNew';
           versionString: '1.0';
           operator: #>=;
-          loads: { 'UI-Core'. 'UI-Tests'. };
+          loads: #('UI-Core' 'UI-Tests' );
           file: 'UI-Configuration';
           repository: 'http://www.example.com/r' username: 'foo' password: 'bar' ];
-       project: 'UI Tests'                     "Create project reference named 'UI Tests'"
-        copyFrom: 'UI Support'                 "based on c copy of 'UI Support' project"
+       project: 'UI Tests'                      "Create project reference named 'UI Tests'"
+        copyFrom: 'UI Support'                  "based on c copy of 'UI Support' project"
         with: [
           "One or more of the following attributes may be changed"
           spec
-            className: 'UIConfig';             "Name of config class"
-            versionString: '1.0';              "Version of project to be loaded"
-            operator: #~>;                     " #= #~= #> #< #>= #<= #~> "
-            loads: { 'UI-Core'. 'UI-Tests'. }; "List of packages to be loaded from project"
-            file: 'UI-Configuration';          "Name of package containing the config"
+            className: 'UIConfig';              "Name of config class"
+            versionString: '1.0';               "Version of project to be loaded"
+            operator: #~>;                      " #= #~= #> #< #>= #<= #~> "
+            loads: #('UI-Core' 'UI-Tests' );    "List of packages to be loaded from project"
+            file: 'UI-Configuration';           "Name of package containing the config"
             repository: 'http://www.example.com/r'];"Load UI-Tests in addition to UI-Core from project"
-      project: 'UI Support' with: '1.0.1';     "Change the versionString for 'UI Support' to '1.0.1'"
-      removeProject: 'UI Tests'.               "Remove the project reference 'UI Tests'"
+      project: 'UI Support' with: '1.0.1';      "Change the versionString for 'UI Support' to '1.0.1'"
+      removeProject: 'UI Tests'.                "Remove the project reference 'UI Tests'"
           
     spec 
-      package: 'Example-AddOn' with: [         "Create or update 'Example-AddOn' package"
+      package: 'Example-AddOn' with: [          "Create or update 'Example-AddOn' package"
         "One or more of the following attributes may be defined or changed"
         spec 
-          requires: { 'Example-Core'. };       "'Example-Core' must be loaded before 'Example-AddOn'"
-          includes: { 'Example-UI'. };         "When 'Example-AddOn' is loaded, load 'Example-UI'"
-          file: 'Example-AddOn-anon.3';        "Explicitly oad version 'Example-AddOn-anon.3' of the package"
+          requires: #('Example-Core' );         "'Example-Core' must be loaded before 'Example-AddOn'"
+          includes: #('Example-UI' );           "When 'Example-AddOn' is loaded, load 'Example-UI'"
+          file: 'Example-AddOn-anon.3';         "Explicitly oad version 'Example-AddOn-anon.3' of the package"
           repository: 'http://www.example.com/yar';  "Load 'Example-AddOn' from the 'http://www.example.com/yar' repository"
-          preLoadDoIt: #preloadForAddOn;       "Before loading 'Example-AddOn' send #preloadForAddOn
-                                                to an instance of this config"
-          postLoadDoIt: #postloadForAddOn ];   "After loading 'Example-AddOn' send #postloadForAddOn
-                                                to an instance of this config"
-      package: 'Example-AddOn' overrides: [    "Create a new package to replace existing package"
+          preLoadDoIt: #preloadForAddOn;        "Before loading 'Example-AddOn' send #preloadForAddOn
+                                                 to an instance of this config"
+          postLoadDoIt: #postloadForAddOn ];    "After loading 'Example-AddOn' send #postloadForAddOn
+                                                 to an instance of this config"
+      package: 'Example-AddOn' overrides: [     "Create a new package to replace existing package"
         "One or more of the following attributes may be defined"
         spec 
-          requires: { 'Example-Core'. 'UI Support'. };
-          includes: { 'Example-UI'. };
+          requires: #('Example-Core' 'UI Support' );
+          includes: #('Example-UI' );
           file: 'Example-AddOn-anon.7';
           repository: 'http://www.example.com/or' username: 'foo' password: 'bar' ;
           preLoadDoIt: #preloadForAddOn;
           postLoadDoIt: #postloadForAddOn ];
       package: 'Example-AddOn' with:'Example-AddOn-anon.5';    "Change the package version loaded"        
-      package: 'Example-Core';                 "Create 'Example-Core' package in project"
+      package: 'Example-Core';                  "Create 'Example-Core' package in project"
       package: 'Example-Tests' with: [
-        spec requires: { 'Example-Core'. } ];
+        spec requires: #('Example-Core' ) ];
       package: 'Example-TestsUI' with: [
-        spec requires: { 'Example-UI'. } ];
+        spec requires: #('Example-UI' ) ];
       package: 'Example-UI' with: [
-        spec requires: { 'Example-AddOn'. } ];
-      removePackage: 'Example-Tests'.          "Remove the package 'Example-Tests'"
+        spec requires: #('Example-AddOn' ) ];
+      removePackage: 'Example-Tests'.           "Remove the package 'Example-Tests'"
     spec
       group: 'default' 
-        with:   { 'Example-Core'. 'Example-AddOn'. };  "Create or update the group 'default',
-                                     adding 'Example-Core' and 'Example-AddOn' to the group."
+        with:   #('Example-Core' 'Example-AddOn' );  "Create or update the group 'default',
+                                                      adding 'Example-Core' and 'Example-AddOn' to the group."
       group: 'default' 
-        overrides:  { 'Example-Core'. 'Example-Tests'. };  "Create the group 'default' to replace existing group,
-                                        consisting of 'Example-Core' and 'Example-AddOn'"
-      removeGroup: 'default' ].                "Remove the group 'default'"
-
+        overrides:  #('Example-Core' 'Example-Tests' );  "Create the group 'default' to replace existing group,
+                                                          consisting of 'Example-Core' and 'Example-AddOn'"
+      removeGroup: 'default' ].                 "Remove the group 'default'"
 }}}
