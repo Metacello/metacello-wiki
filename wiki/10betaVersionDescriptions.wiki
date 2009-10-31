@@ -1,6 +1,21 @@
 #labels Featured
 #Description of the 1.0-beta releases
 
+===1.0-beta.11====
+  * 'dkh 10/31/09 11:03:31'
+  * GemStone/GLASS support'.
+  * pick up latest Gofer package
+  * fix a project version loading bug
+  * printing fix
+  * fix an update packages bug
+  * adjust working version package name calculation
+  * fix current version package name calculation (http://code.google.com/p/metacello/issues/detail?id=4)
+  * doits bugfix
+  * fix a project reference project package bug
+  * add ''Load Latest Packages'' OB command
+  * remove Samples group
+  * save packages fix
+  * must be able to load packages that use directory repositories
 ===1.0-beta.10====
   *'dkh 10/25/2009 11:34'
   * GemStone-specific mods
