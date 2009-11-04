@@ -3,7 +3,7 @@
 
 ===1.0-beta.12====
   * 'dkh 11/03/09 11:07:27'
-  * convert to using ConfigurationOfMetacello convention
+  * convert to using ConfigurationOfxxx naming convention
   * fix updateRepositories bug (update repository for loaded packages only)
   * #repositoryFor:from: ... more GLASS support
   * record last version loaded and list of packages loaded for each configuration (optional)
