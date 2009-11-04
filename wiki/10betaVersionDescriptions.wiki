@@ -1,6 +1,15 @@
 #labels Featured
 #Description of the 1.0-beta releases
 
+===1.0-beta.12====
+  * 'dkh 11/03/09 11:07:27'
+  * convert to using ConfigurationOfMetacello convention
+  * fix updateRepositories bug (update repository for loaded packages only)
+  * #repositoryFor:from: ... more GLASS support
+  * record last version loaded and list of packages loaded for each configuration (optional)
+  * use last list of packages loaded last when loading packages using tools
+  * improve promptForVersion algorithm to show current version and reduce version list to logical choices
+  * fix version number bug when version is empty. add tests
 ===1.0-beta.11====
   * 'dkh 10/31/09 11:03:31'
   * GemStone/GLASS support'.
