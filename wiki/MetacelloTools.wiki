@@ -5,6 +5,7 @@
 [http://gemstonesoup.files.wordpress.com/2009/10/newmetacellotools.png]
 
 =Save Packages=
+Finds the dirty Monticello packages that are members of the selected version of the Metacello project and saves them, prompting you for version name and commit comment. After the packages are saved you are prompted to [MetacelloTools#Update_Package_Methods Update Package Methods].
 =Spawn New Version=
 =Update Package Methods=
 =Current Project Version=
