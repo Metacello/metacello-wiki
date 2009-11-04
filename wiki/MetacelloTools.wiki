@@ -4,11 +4,11 @@
 
 [http://gemstonesoup.files.wordpress.com/2009/10/newmetacellotools.png]
 
-=Save Packages=
+=Save_Packages=
 =Spawn New Version=
 =Update Package Methods=
 =Current Project Version=
 =Load Latest Packages=
 =Load Project Version=
 =Save Project=
-=Update Project=
+=Update_Project=
