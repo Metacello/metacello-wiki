@@ -7,9 +7,16 @@
 =Save Packages=
 Finds the dirty Monticello packages that are members of the selected version of the Metacello project and saves them, prompting you for version name and commit comment. After the packages are saved you are prompted to [MetacelloTools#Update_Package_Methods Update Package Methods].
 =Spawn New Version=
+Generates a new version method prompting for source version, version number and the new methods selector. The package specs for the new method reflect the currently loaded Monticello package versions, like the [MetacelloTools#Update_Package_Methods Update Package Methods] command.
 =Update Package Methods=
+Automatically updates the package spec metadata for the selected version (i.e., modifies and compiles the methods with the #packages:attribute: pragma for the appropriate version to match the currently loaded Monticello package versions). After the methods are update you are prompted to [MetacelloTools#Save_Project Save Project].
 =Current Project Version=
+Displays the current version of the selected Metacello project. The version is calculated by comparing the currently loaded Monticello packages to those specified in the version spec. A leading ‘~’ means that the version is partially loaded (i.e., not all of the packages associated with the project have been loaded into the image).
 =Load Latest Packages=
+Prompts for the #baseline version of the selected Metacello project to be loaded, then loads the latest version of each of the named packages.
 =Load Project Version=
+Prompts for the version of the selected Metacello project to be loaded, then loads all of the packages in the project using the ‘ALL’ pseudo group.
 =Save Project=
+Saves the selected Metacello project to the repository specified by the project package of the selected version. You are prompted for version name and commit comment.
 =Update Project=
+Loads the latest Monticello package version from the repository specified in the project package of the selected version of the Metacello project. Remember that you are simply loading the Metacello project metadata, so it doesn’t hurt to have the latest metadata loaded. Once the latest version is loaded, you are prompted to [MetacelloTools#Load_Project_Version Load Project Version].
