@@ -13,3 +13,5 @@ Note that #loadLatestVersion loads in the OB-based tools for Metacello along wit
 }}}
 
 Don't forget to check out the [Tutorial] and [APIReference API reference].
+
+Metacello has been tested with the [http://ftp.squeak.org/trunk/ Squeak trunk release] and the [http://www.pharo-project.org/pharo-download Pharo 1.0 RC1 release]
