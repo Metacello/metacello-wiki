@@ -2,14 +2,14 @@
 #labels Featured
 To install the latest version of Metacello:
 
-  # Load the latest version of the package Metacello-Configuration from http://seaside.gemstone.com/ss/metacello   
+  # Load the latest version of the package ConfigurationOfMetacello from http://seaside.gemstone.com/ss/metacello.html or http://www.squeaksource.com/metacello.html.
   # Execute the following expression in a workspace:
 {{{
-     MetacelloConfiguration loadLatestVersion.
+     ConfigurationOfMetacello loadLatestVersion.
 }}}
 Note that #loadLatestVersion loads in the OB-based tools for Metacello along with all of the tests, tutorial, etc. If you want to load the minimal configuration, execute the following:
 {{{
-     MetacelloConfiguration project latestVersion load.
+     ConfigurationOfMetacello project latestVersion load.
 }}}
 
 Don't forget to check out the [Tutorial] and [APIReference API reference].
