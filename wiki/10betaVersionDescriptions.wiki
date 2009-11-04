@@ -1,7 +1,7 @@
 #labels Featured
 #Description of the 1.0-beta releases
 
-<a title=xxx>hello</a>
+<a title="xxx">hello</a>
 ===1.0-beta.11====
   * 'dkh 10/31/09 11:03:31'
   * GemStone/GLASS support'.
