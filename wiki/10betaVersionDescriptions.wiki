@@ -2,6 +2,7 @@
 #labels Featured
 
 ===1.0-beta.12====
+  * [http://gemstonesoup.wordpress.com/2009/11/03/metacello-1-0-beta-12-unwrapped/ announcement]
   * 'dkh 11/03/09 11:07:27'
   * convert to using ConfigurationOfxxx naming convention
   * fix updateRepositories bug (update repository for loaded packages only)
@@ -11,6 +12,7 @@
   * improve promptForVersion algorithm to show current version and reduce version list to logical choices
   * fix version number bug when version is empty. add tests
 ===1.0-beta.11====
+  * [http://gemstonesoup.wordpress.com/2009/10/31/metacello-1-0-beta-11-debuts/ announcement]
   * 'dkh 10/31/09 11:03:31'
   * GemStone/GLASS support'.
   * pick up latest Gofer package
@@ -52,6 +54,7 @@
 ===1.0-beta.8====
   * protect senders of asNumber with error handler
 ===1.0-beta.7====
+  * [http://gemstonesoup.wordpress.com/2009/10/19/metacello-tutorial-updated/ announcement]
   * finish project ref tutorial
 ===1.0-beta.6====
   * Bugfixes
