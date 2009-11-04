@@ -1,4 +1,5 @@
 #summary New naming convention for Metacello configurations
+#labels Featured
 
 This is a naming convention that Tudor Girba started using for the Moose project naming the Metacello configuration class and package: *ConfigurationOfMoose*. If the naming convention is used all of the Metacello configurations are put in close proximity in the Class Browser (when sorted alphabetically) and the Monticello Browser, so configuration classes and packages are easy to find. It also makes it easy to recognize that Metacello is being used for a project.
 
