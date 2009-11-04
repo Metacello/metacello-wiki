@@ -1,6 +1,6 @@
 #OB-based Metacello tools
 
-= Menu =
+= Commands =
 
 [http://gemstonesoup.files.wordpress.com/2009/10/newmetacellotools.png]
 
@@ -24,7 +24,7 @@ Displays the current version of the selected Metacello project. The version is c
 ==Load Latest Packages==
 Prompts for the #baseline version of the selected Metacello project to be loaded, then loads the latest version of each of the named packages.
 ==Load Project Version==
-Prompts for the version of the selected Metacello project to be loaded, then loads all of the packages in the project using the ‘ALL’ pseudo group.
+Prompts for the version of the selected Metacello project to be loaded, then loads all of the packages in the project. By default the 'default' group is loaded. however, if so enabled, the last set of packages that were loaded will be loaded for in new version. To enable the recording of load information, see *#lastMetacelloVersionLoad* and *#metacelloVersion:loads:* in the class *MetacelloConfigTemplate*.
 ==Save Project==
 Saves the selected Metacello project to the repository specified by the project package of the selected version. You are prompted for version name and commit comment.
 ==Update Project==
