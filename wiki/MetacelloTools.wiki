@@ -1,3 +1,4 @@
+#labels Featured
 #OB-based Metacello tools - as of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.12 1.0-beta.12]
 
 = Commands =
