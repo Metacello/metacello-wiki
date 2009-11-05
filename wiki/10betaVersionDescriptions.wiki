@@ -1,6 +1,11 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.13====
+  * 'dkh 11/5/2009 15:46'
+  * fix a bug in current version algorithm
+  * improve current version algorithm ... project only configurations handled
+  * pick up latest Gofer
 ===1.0-beta.12====
   * [http://gemstonesoup.wordpress.com/2009/11/03/metacello-1-0-beta-12-unwrapped/ announcement]
   * 'dkh 11/03/09 11:07:27'
