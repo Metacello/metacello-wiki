@@ -1,6 +1,17 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.14====
+  * 'dkh 11/16/2009 15:02'
+  * improve handling of #development project references. Loader is responsible for ensuring that #development projects have latest package loaded.
+  * use latest Gofer (Gofer-lr.83)
+  * skip automatic loading of packages when working copy #needsSaving
+  * better loop termination logic for packageSpecsInLoadOrder
+  * fix logic for loading latest version of a project when versionString is not set (use latest, then last version)
+  * collect repositories from just the packages (ignoring projects) ... affects load latest logic
+  * fix #promptForVersion: ... include #development versions in listing
+  * GemStone attributes, now may include: #gemstone #'gs2.x' #'gs2.3.x' #'gs2.4.x' and #'gs3.x' for finer grainded resolution of Stone version
+  * fix a package loading logic bug found by Doru (loading latest)
 ===1.0-beta.13====
   * 'dkh 11/5/2009 15:46'
   * fix a bug in current version algorithm
