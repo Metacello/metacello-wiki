@@ -1,6 +1,10 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.15====
+  * 'dkh 11/24/2009 09:48'
+  * fix ''Spawn New Version'' command
+  * tweak packageSpec shortcut printing - fine tune use of #overrides:
 ===1.0-beta.14====
   * 'dkh 11/16/2009 15:02'
   * improve handling of #development project references. Loader is responsible for ensuring that #development projects have latest package loaded.
