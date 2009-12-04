@@ -5,3 +5,5 @@ In method [Version02 version02:] (version 0.2), we've simply updated the package
 can be confirmed by printing the following expression:
 
   `(MetacelloTutorialConfig project version: '0.2') spec.`
+
+||[Lesson03 Lesson 3]||
