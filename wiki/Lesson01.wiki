@@ -31,7 +31,7 @@ So the method should be read as:
 
 We can see the spec created for version 0.1 by printing the following expression:
 
-  `(MetacelloTutorialConfig project version: '0.1') spec`
+  [Answer01 `(MetacelloTutorialConfig project version: '0.1') spec.`]
 
 Note that in creating version '0.1' the #common attribute is extracted out.
 
