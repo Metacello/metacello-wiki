@@ -1,3 +1,4 @@
+#labels Tutorial
   * Lessons
     * [Lesson01 Lesson 1]: Intro to Metacello API
     * [Lesson02 Lesson 2]: Updated package version
