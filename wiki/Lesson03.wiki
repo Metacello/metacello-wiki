@@ -1,4 +1,5 @@
 #summary Tutorial Lesson 3: Second package
+#labels Tutorial
 #sidebar TOCLessons
 ||see [Version03 version03:]||
 
