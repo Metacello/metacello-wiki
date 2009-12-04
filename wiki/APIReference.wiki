@@ -8,8 +8,7 @@ baseline10: spec
   <version: '1.0-baseline'>
   
   spec for: #common do: [
-    spec blessing: #baseline.                  "#development, #baseline, #release, 
-                                     #beta, etc."
+    spec blessing: #baseline.                  "#development, #baseline, #release, #beta, etc."
     spec description: 'Descriptive comment'.
     spec author: 'dkh'.
     spec timestamp: '10/7/2009 14:40'.
