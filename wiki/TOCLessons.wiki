@@ -1,5 +1,6 @@
 <wiki:toc max_depth="1" />
   * Lessons
-    * [Lesson01 Lesson1]: intro to Metacello API
+    * [Lesson01 Lesson 1]: intro to Metacello API
+    * [Lesson02 Lesson 2]: 
   * Methods
     * [Version01 version01:]
