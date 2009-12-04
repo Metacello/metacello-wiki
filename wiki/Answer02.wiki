@@ -1,11 +1,12 @@
 #labels Tutorial
-`(MetacelloTutorialConfig project version: '0.1') spec.`
+#sidebar TOCLessons
+`(MetacelloTutorialConfig project version: '0.2') spec.`
 
 {{{
   spec package: 'Example-Core' with: [
     spec 
-      file: 'Example-Core-anon.8';
+      file: 'Example-Core-anon.9';
       repository: 'http://www.example.com/Example'. ].
 }}}
 
-||[Lesson01 Lesson 1]||
+||[Lesson02 Lesson 2]||
