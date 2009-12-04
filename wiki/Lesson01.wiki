@@ -1,5 +1,6 @@
 #summary Tutorial Lesson 1: Intro to Metacello API
 #sidebar TOCLessons
+||see [Version01 version01:]||
 
 Version 0.1 represents the simplest version specification possible. 
 
