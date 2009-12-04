@@ -1,6 +1,8 @@
 #summary Metacello Tutorial
 #labels Featured
 
+You can run through lessons of the tutorial on-line by starting with [Lesson01 lesson 1]. I recommend that you run through the tutorial in an image at least once, and use the online tutorial as a reference.
+
 To run the Tutorial, first [DownloadMetacello load] Metacello into your image.
 
 Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13, then read lesson07 through lesson14 in the MetacelloProjectRefTutorialConfig class for a tutorial covering project references.
