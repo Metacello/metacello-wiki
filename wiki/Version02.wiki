@@ -12,3 +12,4 @@ version02: spec
           file: 'Example-Core-anon.9';
           repository: 'http://www.example.com/Example' ]].
 }}}
+||[Version03 version03:]||[Lesson02 Lesson 2]||
