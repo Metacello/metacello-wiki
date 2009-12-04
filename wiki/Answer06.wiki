@@ -3,9 +3,11 @@
 [Lesson01 Lesson 1]:
   `(MetacelloTutorialConfig project version: '0.1') load.`
 ` a MetacelloNullRecordingMCSpecLoader( Example-Core-anon.8)`
-[Lesson41 Lesson 4]:
+
+[Lesson04 Lesson 4]:
   `(MetacelloTutorialConfig project version: '0.4') load.`
 ` a MetacelloNullRecordingMCSpecLoader( Example-Core-anon.10 Example-Tests-anon.3)`
+
 [Lesson05 Lesson 5]:
   `(MetacelloTutorialConfig project version: '0.5') load.`
 ` a MetacelloNullRecordingMCSpecLoader( Example-Core-anon.11 Example-Tests-anon.3 Example-AddOn-anon.1)`
