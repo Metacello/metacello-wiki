@@ -1,4 +1,5 @@
 #labels Tutorial
+#sidebar TOCLessons
 `(MetacelloTutorialConfig project version: '0.1') spec.`
 
 {{{
