@@ -1,7 +1,8 @@
 #summary Metacello Tutorial
 #labels Featured
+#sidebar TOCLessons
 
-You can run through lessons of the tutorial on-line by starting with [Lesson01 lesson 1] or jump to a specific lesson using the [TutorialLessonIndex tutorial lesson index]. I recommend that you run through the tutorial in an image at least once, and use the online tutorial as a reference.
+You can run through lessons of the tutorial on-line by selecting a lesson or method from the side bar on the left. I recommend that you run through the tutorial in an image at least once, and use the online tutorial as a reference.
 
 To run the Tutorial, first [DownloadMetacello load] Metacello into your image.
 
