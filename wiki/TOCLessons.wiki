@@ -4,7 +4,7 @@
     * [Lesson02 Lesson 2]: Updated package version
     * [Lesson03 Lesson 3]: Second package
     * [Lesson04 Lesson 4]: Shared repository
-    * [Lesson05 Lesson 5]: 
+    * [Lesson05 Lesson 5]: Add third package
   * Version Methods
     * [Version01 version01:]
     * [Version02 version02:]
@@ -17,3 +17,6 @@
     * [Answer03 Answer 3]
     * [Answer04 Answer 4]
     * [Answer05 Answer 5]
+    * [Answer06 Answer 6]
+    * [Answer07 Answer 7]
+    * [Answer08 Answer 8]
