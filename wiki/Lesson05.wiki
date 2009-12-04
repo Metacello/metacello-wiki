@@ -1,0 +1,6 @@
+#summary Tutorial Lesson 5:
+#labels Tutorial
+#sidebar TOCLessons
+||see [Version05 version05:]||[Answer05]||
+
+||[Lesson06 Lesson 6]||
