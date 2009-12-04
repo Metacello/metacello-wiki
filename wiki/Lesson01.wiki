@@ -1,4 +1,5 @@
 #summary Tutorial Lesson 1: Intro to Metacello API
+#labels Tutorial
 #sidebar TOCLessons
 
 ||see [Version01 version01:]||
