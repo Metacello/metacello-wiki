@@ -1,0 +1,10 @@
+#labels Tutorial
+#sidebar TOCLessons
+  `(MetacelloTutorialConfig project version: '0.1') load.`
+` a MetacelloNullRecordingMCSpecLoader( Example-Core-anon.8)`
+  `(MetacelloTutorialConfig project version: '0.4') load.`
+` a MetacelloNullRecordingMCSpecLoader( Example-Core-anon.10 Example-Tests-anon.3)`
+  `(MetacelloTutorialConfig project version: '0.5') load.`
+` a MetacelloNullRecordingMCSpecLoader( Example-Core-anon.11 Example-Tests-anon.3 Example-AddOn-anon.1)`
+
+||[Lesson05 Lesson 5]||
