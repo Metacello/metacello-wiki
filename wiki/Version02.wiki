@@ -10,5 +10,5 @@ version02: spec
       package: 'Example-Core' with: [
         spec 
           file: 'Example-Core-anon.9';
-          repository: 'http://www.example.com/Example' ] ].
+          repository: 'http://www.example.com/Example' ]].
 }}}
