@@ -1,4 +1,5 @@
 #summary Tutorial Version01
+#sidebar TOCLessons
 
 {{{
 version01: spec 
