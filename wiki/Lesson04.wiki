@@ -7,8 +7,8 @@ The specification for version 0.4 is basically the same as version 0.3. Instead 
 
 Compare the printStrings for the specs for each version:
 
-  `(MetacelloTutorialConfig project version: '0.3') spec.`
+  [Answer04 (MetacelloTutorialConfig project version: '0.3') spec.]
 
-  `(MetacelloTutorialConfig project version: '0.4') spec.`
+  [Answer04 (MetacelloTutorialConfig project version: '0.4') spec.]
 
 ||[Lesson05 Lesson 5]||
