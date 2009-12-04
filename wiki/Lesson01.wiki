@@ -1,4 +1,4 @@
-#summary Tutorial Lesson 1: intro to Metacello API
+#summary Tutorial Lesson 1: Intro to Metacello API
 #sidebar TOCLessons
 
 Version 0.1 represents the simplest version specification possible. 
