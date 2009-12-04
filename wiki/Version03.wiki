@@ -1,4 +1,5 @@
 #summary Tutorial method version03:
+#labels Tutorial
 #sidebar TOCLessons
 ||[Version02 version02:]||[Lesson03 Lesson 3]||
 
