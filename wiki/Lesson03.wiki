@@ -1,4 +1,4 @@
-#summary Tutorial Lesson 3: Additional package
+#summary Tutorial Lesson 3: Second package
 #sidebar TOCLessons
 ||see [Version03 version03:]||
 
