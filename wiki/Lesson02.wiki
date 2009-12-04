@@ -1,7 +1,7 @@
 #summary Tutorial Lesson 2: Updated package version
 #sidebar TOCLessons
 
-For version 0.2, we've simply updated the package version to 'Example-Core-anon.9', which 
+In method [Version02 version02:] (version 0.2), we've simply updated the package version to 'Example-Core-anon.9', which 
 can be confirmed by printing the following expression:
 
   `(MetacelloTutorialConfig project version: '0.2') spec.`
