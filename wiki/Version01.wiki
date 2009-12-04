@@ -1,4 +1,5 @@
 #summary Tutorial Version01
+#labels Tutorial
 #sidebar TOCLessons
 ||[Lesson01 Lesson 1]||
 
