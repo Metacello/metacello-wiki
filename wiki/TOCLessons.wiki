@@ -1,8 +1,4 @@
-#summary sidebar table of contents
-
   * Lessons
     * [Lesson01 Lesson1]
   * Methods
     * [Version01 version01:]
-
-  777
