@@ -1,3 +1,4 @@
 #summary Tutorial lesson index
+#sidebar TOCLessons
 
  * [Lesson01 Lesson 1]: intro to Metacello API
