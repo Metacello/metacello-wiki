@@ -3,7 +3,7 @@
     * [Lesson01 Lesson 1]: Intro to Metacello API
     * [Lesson02 Lesson 2]: Updated package version
     * [Lesson03 Lesson 3]: Second package
-    * [Lesson04 Lesson 4]: 
+    * [Lesson04 Lesson 4]: Shared repository
   * Version Methods
     * [Version01 version01:]
     * [Version02 version02:]
