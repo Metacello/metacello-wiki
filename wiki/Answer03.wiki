@@ -14,4 +14,4 @@
         repository: 'http://www.example.com/Example'. ].
 }}}
 
-||[Lesson01 Lesson 3]||
+||[Lesson03 Lesson 3]||
