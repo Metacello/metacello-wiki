@@ -34,4 +34,4 @@ Note that in creating version '0.1' the #common attribute is extracted out.
 
 In addition to #common, there are pre-defined attributes for each of the platforms upon which Metacello runs (#pharo, #squeak, #gemstone and #squeakCommon).
 
-[Lesson02 Lesson 2] 
+||[Lesson02 Lesson 2]||
