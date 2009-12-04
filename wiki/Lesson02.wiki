@@ -1,7 +1,7 @@
 #summary Tutorial Lesson 2: Updated package version
 #labels Tutorial
 #sidebar TOCLessons
-||see [Version02 version02:]||
+||see [Version02 version02:]||[Answer02]||
 
 For version 0.2, we've simply updated the package version to 'Example-Core-anon.9', which 
 can be confirmed by printing the following expression:
