@@ -1,6 +1,14 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.17====
+  * 'dkh 12/9/2009 11:13'
+  * fix a branch name problem for working copies
+  * fine tune the 'Update Package Methods' algorithm
+  * fix Issue 3 'Save Packages' save new
+  * fix Issue 12 Wait cursor during load
+  * fix Issue 14 Ftp repository for Pharo & Squeak
+  * fix Issue 19 Bug in Spawn New Version
 ===1.0-beta.16====
   * 'dkh 12/01/09 16:22:42'
   * put Gofer package in Metacello repository
