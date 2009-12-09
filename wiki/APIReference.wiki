@@ -18,6 +18,8 @@ baseline10: spec
       "One or more repositories may be defined (MCReposioryGroup). Previous forms useful when specifying a 
        single reposiory."
       spec 
+        repository: '/opt/mc/repository';        "directory-based repository"
+        repository: 'ftp://ftp.example.com/repo';"ftp-based repository ... note, supported in Pharo/Squeak only"
         repository: 'http://www.example.com/rr';
         repository: 'http://www.example.com/ar';
         repository: 'http://www.example.com/private' username: 'foo' password: 'bar' ].
