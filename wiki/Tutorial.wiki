@@ -2,7 +2,7 @@
 #labels Featured,Tutorial
 #sidebar TOCLessons
 
-==Online Tutorial==
+==Online Tutorial (still under development)==
 You can run through lessons of the tutorial on-line by selecting a lesson from the side bar on the left or just start with [Lesson01 Lesson 1]. 
 
 I recommend that you run through the tutorial in an image at least once, and use the online tutorial as a reference.
