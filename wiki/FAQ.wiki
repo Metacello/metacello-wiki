@@ -3,3 +3,8 @@
  # [FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]
 
 ==Load Latest For Nested Projects==
+In order to 'force' a load latest for a referenced (nested) project, try
+setting the versionString in the baseline spec for the project to the
+baseline version (when it is loaded it will load the latest versions
+of the packages) ... don't forget to use the proper version in your
+version spec. 
