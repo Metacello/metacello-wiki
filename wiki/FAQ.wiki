@@ -1,5 +1,4 @@
 #summary Frequently Asked Questions
-=Frequently Asked Questions=
  # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
  # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
 ----
