@@ -1,5 +1,5 @@
 #summary Frequently Asked Questions
-
+=Frequently Asked Questions=
  # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
  # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
 ----
@@ -34,5 +34,20 @@ Executing the following expression will load the latest code in the Configuratio
 
 ----
 ==Controlling Package Initialization Order==
-_Does the initialization follows the requeries tree? I mean, I have Chalten-Gregorian that requires on Chalten-Core, but GregorianDate class>>initialize is sent before ChaltenDate class>>initialize, so initialization does not work._
+_Does package initialization in Metacello follow the *#requires:* graph? I have *Chalten-Gregorian* package that *#requires:* the package *Chalten-Core*, but *GregorianDate* class>>initialize is sent before *ChaltenDate* class>>initialize._
+
+In order to control package initialization order, you must use the #linear loadType for your project. The default loadType is #atomic. 
+
+To control the loadType for a project, edit your #project method to look like the following:
+
+{{{
+  ^ project ifNil: [ | constructor |
+      "Bootstrap Metacello if it is not already loaded"
+      self class ensureMetacello.
+      "Construct Metacello project"
+      constructor := (Smalltalk at: #MetacelloVersionConstructor) on: self.
+      project := constructor project.
+      project loadType: #linear. "change to #atomic if desired"
+      project ]
+}}}
 ----
