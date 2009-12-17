@@ -1,10 +1,38 @@
 #summary Frequently Asked Questions
 
- # [FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]
-
+ # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
+ # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
+----
+----
 ==Load Latest For Nested Projects==
-In order to 'force' a load latest for a referenced (nested) project, try
-setting the versionString in the baseline spec for the project to the
-baseline version (when it is loaded it will load the latest versions
-of the packages) ... don't forget to use the proper version in your
-version spec. 
+_For *ConfigurationOfSqueakDBX*, I have defined a baseline with a list of packages and with the following expression, the latest versions of each package will be loaded:_
+
+{{{
+(ConfigurationOfSqueakDBX project version: '1.1-baseline') load.
+}}}
+
+_Suppose now I have *ConfigurationOfGlorpDBX* which has a project reference to *ConfigurationOfSqueakDBX*. Is there a way to load the latests version of a project
+and it dependencies ?_
+
+In order to 'force' a load latest for a referenced (nested) project, set the versionString to the baseline version of the project. For the *ConfigurationOfGlorpDBX* project edit the SqueakDBX project entry with the #versionString: set to '1.1-baseline':
+
+{{{
+spec project: 'SqueakDBX' with: [
+   spec
+     className: 'ConfigurationOfSqueakDBX';
+     versionString: '1.1-baseline';
+     file: 'ConfigurationOfSqueakDBX';
+     repository: 'http://www.squeaksource.com/MetacelloRepository' ].
+}}}
+
+Executing the following expression will load the latest code in the ConfigurationOfGlorpDBX and the ConfigurationOfSqueakDBX projects:
+
+{{{
+(ConfigurationOfGlorpDBX project version: '0.9-baseline') load.
+}}}
+
+
+----
+==Controlling Package Initialization Order==
+_Does the initialization follows the requeries tree? I mean, I have Chalten-Gregorian that requires on Chalten-Core, but GregorianDate class>>initialize is sent before ChaltenDate class>>initialize, so initialization does not work._
+----
