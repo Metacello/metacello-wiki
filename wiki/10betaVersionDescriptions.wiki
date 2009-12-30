@@ -3,6 +3,7 @@
 
 ===1.0-beta.18====
   * 'dkh 12/29/2009 16:17'
+  * *Update the class-side #ensureMetacello method for you configurations:* [http://code.google.com/p/metacello/wiki/EnsureMetacello ensureMetacello implementation]
   * implement MetacelloVersion>>isPossibleBaseline
   * fix currentVersion when no packages or projects are in play
   * fix a Spawn New Version bug
