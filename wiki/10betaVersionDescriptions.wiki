@@ -1,6 +1,19 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.18====
+  * 'dkh 12/29/2009 16:17'
+  * implement MetacelloVersion>>isPossibleBaseline
+  * fix currentVersion when no packages or projects are in play
+  * fix a Spawn New Version bug
+  * allow for a nil #versionString spec in projects
+  * fix Issue 14 Ftp repository for Squeak only
+  * fix Issue 18 #linear default loadType
+  * fix Issue 21 optional blessing for Spawn New Version
+  * fix Issue 22 Better filter for Branch blessing and lastVersion
+  * fix Issue 23 Use Gofer batch commit for Save Packages
+  * fix Issue 26 New version of Gofer breaks Metacello
+  * port to latest version of Gofer (Gofer-lr.109)
 ===1.0-beta.17====
   * 'dkh 12/9/2009 11:13'
   * fix a branch name problem for working copies
