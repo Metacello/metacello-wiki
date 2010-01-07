@@ -15,6 +15,6 @@ ensureMetacello
                                 yourself.
                         [ gofer addPackage: 'ConfigurationOfMetacello' ] on: Warning do: [:ex | ex resume ].
                         gofer load ].
-                "load latest version of Metacello, load a specific version if desired"
-                (Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion ]
+                "load 'default' group of Metacello"
+                (Smalltalk at: #ConfigurationOfMetacello) perform: #load ]
 }}}
