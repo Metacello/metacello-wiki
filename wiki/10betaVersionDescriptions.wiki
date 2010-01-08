@@ -3,6 +3,10 @@
 
 ===1.0-beta.19====
   * 'dkh 1/8/2010 10:34'
+  * Announcements:
+    * [http://gemstonesoup.wordpress.com/2010/01/08/metacello-1-0-beta-19-escapes/ Metacello 1.0-beta.19 escapes]
+    * [http://groups.google.com/group/metacello/browse_frm/thread/99f7c1bd5775d183 
+1.0-beta.19 released]
   * *Update the class-side #ensureMetacello method for you configurations:* [http://code.google.com/p/metacello/wiki/EnsureMetacello ensureMetacello implementation]
   * "Pure" Refactoring of MetacelloVersionConstructor>>on: (Danie Roux)
   * fix Issue 7 "#repositoryOverrides: should be in MetacelloMCVersion"
