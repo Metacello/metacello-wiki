@@ -8,7 +8,6 @@
   * fix Issue 7 "#repositoryOverrides: should be in MetacelloMCVersion"
   * fix Issue 13 "more than one repository per package"
   * fix Issue 16 "version level predoit/postdoit"
-  * a few more tests
   * fix Issue 20 "validation in #postLoadDoIt:/#preLoadDoit:"
   * fix Issue 28 "supplyingAnswers: attribute for packages"
   * fix Issue 30 "Imported version names"
