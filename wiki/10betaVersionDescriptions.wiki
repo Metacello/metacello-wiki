@@ -2,7 +2,7 @@
 #labels Featured
 
 ===1.0-beta.19====
-  * 'dkh 1/8/2010 10:11'
+  * 'dkh 1/8/2010 10:34'
   * *Update the class-side #ensureMetacello method for you configurations:* [http://code.google.com/p/metacello/wiki/EnsureMetacello ensureMetacello implementation]
   * "Pure" Refactoring of MetacelloVersionConstructor>>on: (Danie Roux)
   * fix Issue 7 "#repositoryOverrides: should be in MetacelloMCVersion"
