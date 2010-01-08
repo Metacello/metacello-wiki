@@ -2,6 +2,8 @@
 #labels Featured
  # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
  # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
+ # *[FAQ#How_do_I_create_a_Metacello_Configuration? How do I create a Metacello Configuration?]*
+ # *[FAQ#Why_can't_I_just_subclass_a_class_to_start_my_Metacello_Configuration? Why can't I just subclass a class to start my Metacello Configuration?]*
 ----
 ----
 ==Load Latest For Nested Projects==
@@ -50,4 +52,10 @@ To control the loadType for a project, edit your #project method to look like th
       project loadType: #linear. "change to #atomic if desired"
       project ]
 }}}
+----
+==How do I create a Metacello Configuration?==
+Go the the class *MetacelloConfigTemplate* and do a 'copy...' of the class to your own *[http://code.google.com/p/metacello/wiki/ConfigurationOfxxx ConfigurationOf<your project name>]* class. Then change the category of the new class to be *ConfigurationOf<your project name>*.
+----
+==Why can't I just subclass a class to start my Metacello Configuration?==
+The short answer is that there is a bootstrapping problem. Metacello is not preloaded in Squeak or Pharo. See [http://groups.google.com/group/metacello/browse_thread/thread/c056f4e44e4523f0/ this thread] for a discussion of the issue.
 ----
