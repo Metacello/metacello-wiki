@@ -17,7 +17,7 @@
   * stop caching packages in Pharo ... can cause trouble if repository off-line
   * fix problems with GemStone Metacello when runnng without OB
   * make error handler for #do:displaying: a little more specific 
-  * fix a problem when a second version of a package is being requested during atomic load. Must overrided with newer package.
+  * fix a problem when a second version of a package is being requested during atomic load. Must override with newer package.
   * run with pre and post 10504 Pharo images
 
 ===1.0-beta.18====
