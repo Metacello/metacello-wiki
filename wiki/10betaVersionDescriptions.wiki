@@ -5,15 +5,15 @@
   * 'dkh 1/8/2010 10:11'
   * *Update the class-side #ensureMetacello method for you configurations:* [http://code.google.com/p/metacello/wiki/EnsureMetacello ensureMetacello implementation]
   * "Pure" Refactoring of MetacelloVersionConstructor>>on: (Danie Roux)
-  * fix Issue 7: http://code.google.com/p/metacello/issues/detail?id=7 "#repositoryOverrides: should be in MetacelloMCVersion"
-  * fix Issue 13: http://code.google.com/p/metacello/issues/detail?id=13 "more than one repository per package"
-  * fix Issue 16: http://code.google.com/p/metacello/issues/detail?id=16 "version level predoit/postdoit"
+  * fix Issue 7 "#repositoryOverrides: should be in MetacelloMCVersion"
+  * fix Issue 13 "more than one repository per package"
+  * fix Issue 16 "version level predoit/postdoit"
   * a few more tests
-  * fix Issue 20: http://code.google.com/p/metacello/issues/detail?id=20 "validation in #postLoadDoIt:/#preLoadDoit:"
-  * fix Issue 28: http://code.google.com/p/metacello/issues/detail?id=28 "supplyingAnswers: attribute for packages"
-  * fix Issue 30: http://code.google.com/p/metacello/issues/detail?id=30 "Imported version names"
-  * fix Issue 33: http://code.google.com/p/metacello/issues/detail?id=33 "ensureMetacello should do full bootstrap"
-  * fix Issue 38: http://code.google.com/p/metacello/issues/detail?id=38 "Metacello load fails on Squeak"
+  * fix Issue 20 "validation in #postLoadDoIt:/#preLoadDoit:"
+  * fix Issue 28 "supplyingAnswers: attribute for packages"
+  * fix Issue 30 "Imported version names"
+  * fix Issue 33 "ensureMetacello should do full bootstrap"
+  * fix Issue 38 "Metacello load fails on Squeak"
   * port Gofer-lr.109 to GemStone
   * stop caching packages in Pharo ... can cause trouble if repository off-line
   * fix problems with GemStone Metacello when runnng without OB
