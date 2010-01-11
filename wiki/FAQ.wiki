@@ -1,9 +1,9 @@
 #summary Frequently Asked Questions
 #labels Featured
- # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
- # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
  # *[FAQ#How_do_I_create_a_Metacello_Configuration? How do I create a Metacello Configuration?]*
  # *[FAQ#Why_can't_I_just_subclass_a_class_to_start_my_Metacello_Configuration? Why can't I just subclass a class to start my Metacello Configuration?]*
+ # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
+ # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
 ----
 ----
 ==Load Latest For Nested Projects==
