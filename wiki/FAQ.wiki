@@ -61,9 +61,10 @@ Go the the class *MetacelloConfigTemplate* and do a 'copy...' of the class to yo
 The short answer is that there is a bootstrapping problem. Metacello is not preloaded in Squeak or Pharo. See [http://groups.google.com/group/metacello/browse_thread/thread/c056f4e44e4523f0/ this thread] for a discussion of the issue.
 ----
 ==How do I load the last version of a project?==
-The easiest way to do it is to reference to the baseline directly:
+The easiest way to do it is to reference to the baseline directly. Consider the following example:
 {{{
 (ConfigurationOfCAnalyzer project version: '1.0-baseline') load
 }}}
 The code above will bring all the latests version as you are not specifying them. 
+A discussion is may be read on *http://groups.google.com/group/metacello/browse_thread/thread/af91bb51e4ed1568/*
 ----
