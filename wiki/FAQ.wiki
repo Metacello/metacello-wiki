@@ -4,7 +4,7 @@
  # *[FAQ#Why_can't_I_just_subclass_a_class_to_start_my_Metacello_Configuration? Why can't I just subclass a class to start my Metacello Configuration?]*
  # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
  # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
- # *[FAQ#How_do_I_load_the_last_version_of_a_project How do I load the last version of a project?]*
+ # *[FAQ#How_do_I_load_the_last_version_of_a_project? How do I load the last version of a project?]*
 ----
 ----
 ==Load Latest For Nested Projects==
