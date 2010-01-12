@@ -70,4 +70,5 @@ A discussion is may be read on http://groups.google.com/group/metacello/browse_t
 
 By loading a baseline, you do not specify a particular version. In that case, Metacello loads the last version.
 Note that specifying a package in a baseline without specifying a version in the method loads the last version also.
+If no #file: (or package version) is specified, the latest version of the package is loaded.
 ----
