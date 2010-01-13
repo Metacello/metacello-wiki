@@ -68,5 +68,5 @@ The easiest way to do it is to reference to the baseline directly. Consider the 
 The code above will bring all the latests version as you are not specifying them. 
 A discussion is may be read on http://groups.google.com/group/metacello/browse_thread/thread/af91bb51e4ed1568/
 
-Specifying a baseline instead of a particular version makes Metacello loads the last committed version. Note that specifying a package in a baseline without specifying a version in the method loads the last version also. If no #file: (or package version) is specified, the latest version of the package is loaded. 
+Specifying a baseline instead of a particular version makes Metacello load the last committed version. Note that specifying a package in a baseline without specifying a version in the method loads the last version also. If no #file: (or package version) is specified, the latest version of the package is loaded. 
 ----
