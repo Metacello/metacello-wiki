@@ -3,6 +3,8 @@
 
 ===1.0-beta.20====
   * 'DaleHenrichs 1/14/2010 09:45'
+  * Announcements:
+    * [http://groups.google.com/group/metacello/browse_frm/thread/aa22e8b4b7515299 1.0-beta.20 released]
   * tests for nested #for:do: statements
   * fix Issue 40 "Tight package/repository coordination lost"
   * take full advantage of Gofer repository caching
