@@ -3,6 +3,8 @@
 
 ===1.0-beta.21====
   * 'DaleHenrichs 1/16/2010 12:47'
+  * Announcements:
+    * [http://groups.google.com/group/metacello/browse_frm/thread/9e1a3144fd442180 1.0-beta.21 released]
   * fix new tests so that they run on GemStone and don't collide with existing packages
   * fix Issue 41 "Trouble with nested ProgressInitiationException in certain circumstances"
   * fix Issue 42 "ConfigurationOfSeaside28 should use supplyingAnswers:"
