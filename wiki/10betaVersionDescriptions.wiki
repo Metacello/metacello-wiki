@@ -1,6 +1,18 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.21====
+  * 'DaleHenrichs 1/16/2010 12:47'
+  * fix new tests so that they run on GemStone and don't collide with existing packages
+  * fix Issue 41 "Trouble with nested ProgressInitiationException in certain circumstances"
+  * fix Issue 42 "ConfigurationOfSeaside* should use supplyingAnswers:"
+  * fix Issue 43 "Eliminate use of #versionInfoFor:from:do: "
+  * Metacello now uses Gofer for all of its interactions with Monticello (a few pockets of workingCopy still exist:)
+  * pick up latest Gofer-Core-lr.115 and Gofer-Tests
+  * some more version caching for speed
+  * better workingCopy resolution for MetacelloCachingGoferResolvedReference
+  * adjust tests  - no longer inheriting pragmas ... too expensive
+  * introduce valueSupplyingMetacelloAnswers: to work around Pharo Issue 1824 http://code.google.com/p/pharo/issues/detail?id=1824
 ===1.0-beta.20====
   * 'DaleHenrichs 1/14/2010 09:45'
   * Announcements:
