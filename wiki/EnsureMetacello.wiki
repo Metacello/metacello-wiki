@@ -7,8 +7,8 @@ ensureMetacello
 
         Smalltalk at: #MetacelloProject ifAbsent: [
                 Smalltalk at: #Gofer ifAbsent: [
-                        "Current version of Gofer from which to bootstrap - as of 1.0-beta.15"
-                        self bootstrapPackage: 'Gofer-lr.83' from: 'http://seaside.gemstone.com/ss/metacello' ].
+                        "Current version of Gofer from which to bootstrap - as of 1.0-beta.20"
+                        self bootstrapPackage: 'Gofer-Core-lr.115' from: 'http://seaside.gemstone.com/ss/metacello' ].
                 Smalltalk at: #Gofer ifPresent: [:goferClass | | gofer |
                         gofer := goferClass new
                                 url: 'http://seaside.gemstone.com/ss/metacello';
