@@ -1,6 +1,16 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.22====
+  * 'DaleHenrichs 1/25/2010 14:19'
+  * fix Issue 36 "Use ConfigurationOfOB for Metacello"
+  * fix Issue 49 "occassional load of older versions of projects"
+  * fix Issue 52 "preload/postload for groups and projects"
+  * MetacelloMCVersion>>resolveToLoadableSpecs: added to supplement query API
+  * support for Metaceller
+  * fix a bug in MetacelloMCProjectSpec>>resolveToAllPackagesIn:visited: when the project spec doesn't have a versionString specified
+  * ProfStef tutorial (MetacelloCreateConfigurationTutorial)
+  * latest Gofer (Gofer-Core-lr.116 and Gofer-Tests-lr.115)
 ===1.0-beta.21====
   * 'DaleHenrichs 1/16/2010 12:47'
   * Announcements:
