@@ -19,12 +19,12 @@ Gofer new
 }}}
 Note that #loadLatestVersion loads a minimum install of Metacello.
 ==OB Tools==
-To load the OB-based tools, execute the following expression in a workspace:
+To load the OB-based tools, execute the following expression in a workspace (after [DownloadMetacello#Pharo loading Metacello] into your image):
 {{{
      ConfigurationOfMetacello project latestVersion load: #('UI').
 }}}
 ==Tutorial & API Reference ==
-To load the [Tutorial tutorial] and [APIReference API reference], execute the following expression in a workspace:
+To load the [Tutorial tutorial] and [APIReference API reference], execute the following expression in a workspace (after [DownloadMetacello#Pharo loading Metacello] into your image):
 {{{
      ConfigurationOfMetacello project latestVersion load: #('Tutorial').
 }}}
