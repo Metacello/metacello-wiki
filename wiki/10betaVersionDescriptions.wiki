@@ -3,6 +3,8 @@
 
 ===1.0-beta.22====
   * 'DaleHenrichs 1/25/2010 14:19'
+  * Announcements:
+    * [http://groups.google.com/group/metacello/browse_frm/thread/81ae8c1aec5b39f7 1.0-beta.22 released]
   * fix Issue 36 "Use ConfigurationOfOB for Metacello"
   * fix Issue 49 "occassional load of older versions of projects"
   * fix Issue 52 "preload/postload for groups and projects"
