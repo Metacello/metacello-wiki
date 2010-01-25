@@ -9,7 +9,7 @@ Gofer new
   squeaksource: 'MetacelloRepository';
   package: 'ConfigurationOfMetacello';
   load.
-(Smalltalk at: #ConfigurationOfMetacello) loadLatestVersion.
+(Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
 }}}
 ==Squeak==
   # Load the latest version of the package ConfigurationOfMetacello from http://www.squeaksource.com/MetacelloRepository.html.
