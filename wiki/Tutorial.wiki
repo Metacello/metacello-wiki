@@ -3,7 +3,7 @@
 
 
 ==Image-based Tutorial==
-To run the Tutorial, first [DownloadMetacello#Tutorial_&_API_Reference load] Metacello into your image.
+To run the Tutorial, first [DownloadMetacello#Tutorial_&_API_Reference load] the Metacello Tutorial into your image.
 
 Then open two browsers on the MetacelloTutorialConfig class. In the lefthand browser view the methods in the 'lessons' category. In the righthand browser view the '--all--' category. Read the comments in lesson01 through lesson13, then read lesson07 through lesson14 in the MetacelloProjectRefTutorialConfig class for a tutorial covering project references.
 
