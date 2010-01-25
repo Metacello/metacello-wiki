@@ -1,7 +1,7 @@
 #summary Listing of full Metacello configuration API
 #labels Featured
 
-As of [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.19 1.0-beta.19].
+As of [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.22 1.0-beta.22].
 
 The colorization is funky, but I think it's better than nothing:)
 
@@ -43,6 +43,10 @@ baseline10: spec
 					className: 'UIConfig';
 					"Version of project to be loaded. if theversionString is not specified, then the latest version of the project is used."
 					versionString: '1.0';
+					"Before loading this project, send #preloadForProject to an instance of this config"
+					preLoadDoIt: #preloadForProject;
+					"After loading this project, send #postloadForProject to an instance of this config"
+					postLoadDoIt: #postloadForProject;
 					"OPTIONAL: Version comparison operator #= #~= #> #< #>= #<= #~> "
 					operator: #~>; 	
 					"OPTIONAL: List of packages to be loaded from project"															
