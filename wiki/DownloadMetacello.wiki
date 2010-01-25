@@ -6,7 +6,7 @@ To install the latest version of Metacello (as of version [http://code.google.co
   # Execute the following expression in a workspace:
 {{{
 Gofer new
-  gemsource: 'metacello';
+  squeaksource: 'MetacelloRepository';
   package: 'ConfigurationOfMetacello';
   load.
 (Smalltalk at: #ConfigurationOfMetacello) loadLatestVersion.
