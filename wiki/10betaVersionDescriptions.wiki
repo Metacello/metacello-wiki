@@ -4,7 +4,7 @@
 ===1.0-beta.23====
   * 'DaleHenrichs 2/9/2010 11:33'
   * Announcements
-    *[http://groups.google.com/group/metacello/browse_frm/thread/448ef29d979c32f7 1.0-beta.23 released]
+    * [http://groups.google.com/group/metacello/browse_frm/thread/448ef29d979c32f7 1.0-beta.23 released]
   * port to Squeak3.9.1-final-7075, Squeak3.10.2-7179-basic, Squeak3.10.2-Trunk-091128 and Squeak3.11-8931-alpha
   * add #unloadMetacello to MetacelloConfigTemplate
   * fix Issue25 "currentVersion cache is too sticky ..."
