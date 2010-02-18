@@ -2,7 +2,7 @@
 #labels Featured
 
 ===1.0-beta.24====
-  * 'DaleHenrichs 2/18/2010 15:44
+  * DaleHenrichs 2/18/2010 15:44
   * fix a bug in MetacelloMCProjectSpec>>compareCurrentVersion:targetVersionStatus:using: related when calculating current version against a non-standard loader
   * tweak the loader API a bit for GemStone (performance improvements)
   * tweak transcript info for atomic load
