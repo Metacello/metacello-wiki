@@ -3,6 +3,8 @@
 
 ===1.0-beta.24====
   * DaleHenrichs 2/18/2010 15:44
+  * Announcements
+    * [http://groups.google.com/group/metacello/browse_frm/thread/6501b281e49f0786 1.0-beta.24 released]
   * fix a bug in MetacelloMCProjectSpec>>compareCurrentVersion:targetVersionStatus:using: related when calculating current version against a non-standard loader
   * tweak the loader API a bit for GemStone (performance improvements)
   * tweak transcript info for atomic load
