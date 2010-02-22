@@ -1,0 +1,227 @@
+#summary Why a package management system?
+
+from an [http://lists.squeakfoundation.org/pipermail/squeak-dev/2010-February/144820.html email] by Torsten Bergmann 
+
+----
+By using Metacello a projects author can make specific versions/package configurations available to others and afterwards commit new code to the repo without affection others.
+ 
+
+Without Metacello (or a comparable package management system) we 
+will NEVER SCALE projects or allow that they develop independent 
+from each other without breaking each other! Especially when
+they are managed outside of the image - and I think that's our goal:
+a small kernel image and external projects/packages that could be 
+loaded (and that fit together to work and could be based on another).
+
+Metacello does the minimal thing to manage that and even if it 
+may require more work (especially on tools) it does a fairly good job
+already. You just have to learn about it and about modularity. 
+
+
+Think of the following scenario:
+================================
+
+There is a project "MyDatabaseDriver" done by Mr. Bean. He creates two Monticello packages:
+
+{{{
+     MyDatabaseDriver-Core-bean.3.mcz
+     MyDatabaseDriver-Tests-bean.1.mcz
+}}}
+Since his initial implementation (even after three commits for the
+core) seems good enough, he will create a first milestone/version for others to use.
+
+He could have written an InstallScript ... but he knows about 
+the advantages of a package management system and therefore
+takes the 5 minutes tutorial to learn about Metacello. 
+
+He creates a class "ConfigurationOfMyDatabaseDriver" since he learned
+that Metacello uses a simple class with methods to describe the load order
+and version of the packages that fit together. (Java's Maven for instance
+uses XML files, so called POM's).
+
+
+First Mr. Bean describes a baseline, which is nothing then the
+structure and dependencies (load order) of the packages. In our Metacello example
+this is simple done by defining a method on the projects configuration 
+class (which is ConfigurationOfMyDatabaseDriver):
+{{{
+    baseline10: spec 
+	<version: '1.0-baseline'>
+        spec for: #common do: [
+	    spec 
+                blessing: #baseline;
+                repository: 'http://www.squeaksource.com/MyDatabaseDriver';
+            spec 
+		package: 'MyDatabaseDriver-Core'.
+	    spec 
+                package: 'MyDatabaseDriver-Tests' with: [spec requires: 'MyDatabaseDriver-Core'].               
+	].
+}}}
+
+_(Side Note: you could chain any message to spec to be more compact here - but this example is intended for readability)_
+
+Anything Mr Bean has done in his first baseline method is to describe in a declarative way that he 
+has two packages in an own repository - where the second one (the tests) require the actual 
+code to run. So the test code is dependent on the code he tests.
+
+He also desribes the version of these Monticello packages that are know to work
+together in a second method to define a first milestone (also "Metacello version 1.0" or 
+"version 1.0 of the MyDatabaseDriver project"):
+{{{
+    version10: spec
+	<version: '1.0' imports: #('1.0-baseline')>
+
+	spec for: #common do: [
+		spec blessing: #release.
+		spec author: 'Mr. Bean'.
+		spec description: 'First release 1.0 of this project '.
+                spec
+                    package: 'MyDatabaseDriver-Core' with: 'MyDatabaseDriver-Core-bean.3';
+		    package: 'MyDatabaseDriver-Tests' with: 'MyDatabaseDriver-Tests-bean.1';
+	].
+}}}
+Since he wanted to share it he put his new configuration class "ConfigurationOfMyDatabaseDriver" 
+in a Monticello package with the same name and uploads it to "http://squeaksource.com/MetacelloRepository"
+
+He now announces it on the developer list and tell other to load the project by getting the package
+(either manual, using Gofer or Installer) and then evaluating:
+
+{{{
+   (ConfigurationOfMyDatabaseDriver project version: '1.0') load 
+}}}
+Hey - cool. Another developer (Mr. Frog) responded friendly on the mailinglist, told Mr. Bean
+that he found a bug and wanted to help with the project since he also knows how to fix this bug. 
+He was added as a new developer on http://www.squeaksource.com/MyDatabaseDriver by Mr. Bean 
+and he created two new versions of the Monticello packages:
+{{{
+     MyDatabaseDriver-Core-frog.4.mcz
+     MyDatabaseDriver-Tests-frog.2.mcz
+}}}
+Time to share this new milestone again, so Mr. Bean adapted the "ConfigurationOfMyDatabaseDriver" with a
+new method for the new version of the whole project 1.1:
+{{{
+  version11: spec
+	<version: '1.1' imports: #('1.0-baseline')>
+
+	spec for: #common do: [
+		spec blessing: #release.
+		spec author: 'Mr. Bean'.
+		spec description: 'New release 1.1 of this project done with the Help of Mr. Frog'.
+                spec
+                    package: 'MyDatabaseDriver-Core' with: 'MyDatabaseDriver-Core-frog.4';
+		    package: 'MyDatabaseDriver-Tests' with: 'MyDatabaseDriver-Tests-frog.2';
+	].
+}}}
+Since the load order has'nt changed he just has to tell which new Monticello packages make up
+the new release.
+
+He uploaded this change to Squeaksource and anyone is able to load the new version with the fix:
+{{{
+   (ConfigurationOfMyDatabaseDriver project version: '1.1') load 
+}}}
+Cool. But even the old configuration 1.0 is still loadable (if one requires it):
+{{{
+   (ConfigurationOfMyDatabaseDriver project version: '1.0') load  
+}}}
+No magic - but very very helpful! Think of a company who created an image for a customer
+based on the initial version 1.0 of the driver. If they have to rebuild this image exactly the 
+same as it was - no problem with a package management system they are able to load version 1.0 even
+after some years.
+
+
+OK - let's go ahead. Mr. Bean and Mr. Frog are now continue to work and since the core
+is growing they want to split this package. They also use a database which allows for 
+standard SQL like stuff as well as database specific stuff. Another reason to split the core.
+
+So they split the "Core" package into a "Core-SQL" and "Core-NonStandard", and
+end up with three packages now: 
+
+{{{
+  MyDatabaseDriver-Core-SQL-bean.1.mcz
+  MyDatabaseDriver-Core-NonStandard-frog.1.mcz
+  MyDatabaseDriver-Tests-frog.3.mcz
+}}}
+Time for them to make a new new milestone 1.2 for the project. With the new packages
+they have to define a new baseline which is easily done:
+{{{
+  baseline12: spec 
+	<version: '1.2-baseline'>
+        spec for: #common do: [
+	    spec 
+                blessing: #baseline;
+                repository: 'http://www.squeaksource.com/MyDatabaseDriver';
+            spec 
+		package: 'MyDatabaseDriver-Core-SQL'.
+            spec 
+		package: 'MyDatabaseDriver-Core-NonStandard'.               
+	    spec 
+                package: 'MyDatabaseDriver-Tests' with: [spec requires: #('MyDatabaseDriver-Core-SQL' 'MyDatabaseDriver-Core-NonStandard')].               
+	].
+}}}
+Note that the test package is not splitted - and now require both new core packages as prerequisite.
+
+And a new version for the project (now based on the second baseline) is made accordingly:
+{{{
+   version12: spec
+	<version: '1.2' imports: #('1.2-baseline')>
+
+	spec for: #common do: [
+		spec blessing: #release.
+		spec author: 'Mr. Frog'.
+		spec description: 'New release 1.2 with improvements and separate standard SQL from database specific'.
+                spec
+                    package: 'MyDatabaseDriver-Core-SQL' with: 'MyDatabaseDriver-Core--SQL-bean.1';
+                    package: 'MyDatabaseDriver-Core-NonStandard' with: 'MyDatabaseDriver-Core-NonStandard-frog.1';
+		    package: 'MyDatabaseDriver-Tests' with: 'MyDatabaseDriver-Tests-frog.3';
+	].
+}}}
+Again they write a mail to the developer list.From the users point of view nothing really changed to get the new project version: 
+{{{
+   (ConfigurationOfMyDatabaseDriver project version: '1.2') load 
+}}}
+And again: you still can load the old versions "1.0" and '1.1' using the configuration.
+
+So if have an app with code that still uses version 1.1. of the database driver you are able to do so - 
+if you find the time to adapt your code to all the new changes from Mr. Bean and Mr. Frog
+you can already switch to version 1.2.
+ 
+
+_Also note that the old "MyDatabaseDriver-Core-frog.4.mcz" is not removed from the repository so that version 1.0 and 1.1. are still working._
+
+This is only a short introduction of what you can do with Metacello. As a package management 
+system it allows you to declare/load/share defined points of your development independent 
+from time. It is also a UNIFORM WAY TO EXCHANGE VERSIONS or BASE THE VERSION OF ONE
+PROJECT ON SPECIFIC VERSIONS OF ANOTHER PROJECT.
+
+If you want to do professional and reproducable development using such a system is essential!
+
+It's also a new way of communication, if you for instance want to know which version
+of "KomHttpServer" is the latest stable just check out "ConfigurationOfKomHttpServer"
+in http://squeaksource.com/MetacelloRepository and you will easily find out once you
+have understood the simple basics of Metacello.
+
+
+If you want to learn more on Metacello just
+
+   * read http://gemstonesoup.wordpress.com/2009/08/25/metacello-package-management-for-monticello/ (outdated, but gives an overview of the goals)
+   * then read http://gemstonesoup.wordpress.com/2009/10/14/a-shiny-new-api-for-metacello/
+   * browse the text and examples in the metacello tutorial:
+{{{
+       ConfigurationOfMetacello project latestVersion load: 'Metacello-Tutorial'.
+}}}
+   * read http://code.google.com/p/metacello
+
+Or check out the various configurations already available at http://squeaksource.com/MetacelloRepository
+(start with simple ones like ConfigurationOfVistaCursors, ConfigurationOfScriptManager and then look at ConfigurationOfVMMaker, ConfigurationOfSQLite3, or ConfigurationOfSeaside30.
+
+If you want to see how you can even automate image building of a whole seaside application
+using Metacello check out http://astares.blogspot.com/2010/01/pharo-10-release-candidate-2-and-image.html
+
+Metacello is not yet complete - but usable. Hope it will evolve -
+especially in the tools space. Look at Java where you can even
+visually [https://docs.sonatype.org/download/attachments/1999021/pom-dependency-graph.png?version=1&modificationDate=1212678465631 browse the dependencies] and find cycles and conflicts, ...
+
+Sorry for the long post - but I hope I was able to wet your appetite towards modular Smalltalk.
+
+Bye
+T.
