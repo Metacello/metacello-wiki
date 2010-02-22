@@ -1,4 +1,5 @@
 #summary Why a package management system?
+#labels Featured
 
 from an [http://lists.squeakfoundation.org/pipermail/squeak-dev/2010-February/144820.html email] by Torsten Bergmann 
 
