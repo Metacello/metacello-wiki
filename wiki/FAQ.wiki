@@ -5,6 +5,7 @@
  # *[FAQ#Load_Latest_For_Nested_Projects How do I load the latest package for a project that references other projects?]*
  # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
  # *[FAQ#How_do_I_load_the_last_version_of_a_project? How do I load the last version of a project?]*
+ # *[FAQ#How_do_I_override_the_repository_for_a_config? How do use the local disk repository to install a configuration from without editting the config?]*
 ----
 ----
 ==Load Latest For Nested Projects==
@@ -69,4 +70,19 @@ The code above will bring all the latests version as you are not specifying them
 A discussion is may be read on http://groups.google.com/group/metacello/browse_thread/thread/af91bb51e4ed1568/
 
 Specifying a baseline instead of a particular version makes Metacello load the last committed version. Note that specifying a package in a baseline without specifying a version in the method loads the last version also. If no #file: (or package version) is specified, the latest version of the package is loaded. 
+----
+==How do I override the repository for a config?==
+You can use #repositoryOverrides: to pass in a list of MCRepsitories to a version like the following:
+
+{{{
+  | project version repo |
+  project := self project.
+  version := project version: '1.0'.
+  repo := MCDiDirectoryRepository new.
+  repo directory: FileDirectory on: '<path to directory>'.
+  version repositoryOverrides: (OrderedCollection with: repo).
+  version load.
+}}}
+
+The list of repositories overrides every repository specified in the config. Note that automatic update of development configs doesn't honor repositoryOverrides: ... yet.
 ----
