@@ -1,0 +1,3 @@
+#summary The mancoosi project is calling for an international competition of solvers for package/component installation and upgrade problems.
+
+http://www.mancoosi.org/misc-2010/
