@@ -56,7 +56,11 @@ To control the loadType for a project, edit your #project method to look like th
 }}}
 ----
 ==How do I create a Metacello Configuration?==
-Go the the class *MetacelloConfigTemplate* and do a 'copy...' of the class to your own *[http://code.google.com/p/metacello/wiki/ConfigurationOfxxx ConfigurationOf<your project name>]* class. Then change the category of the new class to be *ConfigurationOf<your project name>*.
+To create your own Metacello configuration, you can follow the ProfStef tutorial:
+{{{
+ConfigurationOfMetacello project latestVersion load: #('Tutorial').
+ProfStef goOn: MetacelloCreateConfigurationTutorial.
+}}}
 ----
 ==Why not subclass a class to start my Metacello Configuration?==
 The short answer is that there is a bootstrapping problem. Metacello is not preloaded in Squeak or Pharo. See [http://groups.google.com/group/metacello/browse_thread/thread/c056f4e44e4523f0/ this thread] for a discussion of the issue.
