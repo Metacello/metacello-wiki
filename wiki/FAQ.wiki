@@ -56,7 +56,7 @@ To control the loadType for a project, edit your #project method to look like th
 }}}
 ----
 ==How do I create a Metacello Configuration?==
-To create your own Metacello configuration, you can follow the ProfStef tutorial:
+To create your own Metacello configuration, follow the step by step instructionsi in the ProfStef tutorial:
 {{{
 ConfigurationOfMetacello project latestVersion load: #('Tutorial').
 ProfStef goOn: MetacelloCreateConfigurationTutorial.
