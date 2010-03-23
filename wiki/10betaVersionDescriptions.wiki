@@ -5,7 +5,7 @@
   * DaleHenrichs 3/23/2010 15:24
   * Announcements
     * [http://groups.google.com/group/metacello/browse_frm/thread/10a08c7c3eadeecd 1.0-beta.25 released]
-  * Update Pages
+  * Updated Pages
     * DownloadMetacello
     * [http://code.google.com/p/metacello/wiki/FAQ FAQ]
     * MetacelloTools
