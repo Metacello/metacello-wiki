@@ -30,3 +30,9 @@ To load the [Tutorial tutorial] and [APIReference API reference], execute the fo
 {{{
      ConfigurationOfMetacello project latestVersion load: #('Tutorial').
 }}}
+==Create Your Own Metacello Configuration==
+To create your own Metacello configuration, run the ProfStef tutorial:
+{{{
+ConfigurationOfMetacello project latestVersion load: #('Tutorial').
+ProfStef goOn: MetacelloCreateConfigurationTutorial.
+}}}
