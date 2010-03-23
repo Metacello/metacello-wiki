@@ -1,13 +1,13 @@
 #summary OB-based Metacello tools
 #labels Featured
 
-As of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.12 1.0-beta.12]
+As of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.25 1.0-beta.25]
 
 = Commands =
 
-[http://gemstonesoup.files.wordpress.com/2009/10/newmetacellotools.png]
+[http://gemstonesoup.files.wordpress.com/2010/03/metacellotools.png]
 
-  * [MetacelloTools#Save_Packages Save Packages]
+  * [MetacelloTools#Save_Packages Save Packages (nested)]
   * [MetacelloTools#Spawn_New_Version Spawn New Version]
   * [MetacelloTools#Update_Package_Methods Update Package Methods]
   * [MetacelloTools#Current_Project_Version Current Project Version]
@@ -16,8 +16,12 @@ As of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions
   * [MetacelloTools#Save_Project Save Project]
   * [MetacelloTools#Update_Project Update Project]
 
-==Save Packages==
-Finds the dirty Monticello packages that are members of the selected version of the Metacello project and saves them, prompting you for version name and commit comment. After the packages are saved you are prompted to [MetacelloTools#Update_Package_Methods Update Package Methods].
+==Save Packages (nested)==
+Traverses all of the projects that are dependents of the selected project. For each project a list of dirty packages associated with that projects is created and you are prompted for a commit comment that is used as the commit for each of the mcz files. 
+
+You are then prompted to [MetacelloTools#Update_Package_Methods Update Package Metods] and then given an opportunity to commit the configuration mcz file.
+
+After all projects with dirty methods have been saved, a final pass is made to check for dirty project configurations. You are prompted to commit each of them.
 ==Spawn New Version==
 Generates a new version method prompting for source version, version number and the new methods selector. The package specs for the new method reflect the currently loaded Monticello package versions, like the [MetacelloTools#Update_Package_Methods Update Package Methods] command.
 ==Update Package Methods==
