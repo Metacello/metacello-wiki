@@ -6,6 +6,7 @@
   * Announcements
     * [http://groups.google.com/group/metacello/browse_frm/thread/10a08c7c3eadeecd 1.0-beta.25 released]
   * Update Pages
+    * DownloadMetacello
     * MetacelloTools
   * pick up Gofer 1.0.2
   * fix Issue 10 "''save packages'' should recurse through projects"
