@@ -1,6 +1,28 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.25====
+  * DaleHenrichs 3/23/2010 15:24
+  * Announcements
+    * [http://groups.google.com/group/metacello/browse_frm/thread/10a08c7c3eadeecd 1.0-beta.25 released]
+  * pick up Gofer 1.0.2
+  * fix Issue 10 "''save packages'' should recurse through projects"
+  * fix Issue 24 "Gofer #fetch support"
+  * fix Issue 31 "Handle boundary between #atomic and #linear loads ..."
+  * fix Issue 32 "Connect repositories as MCServerDirectory rather than MCDirectory"
+  * fix Issue 48 "Should have #loadReport message for loader..."
+  * fix Issue 56 "save configurtion that uses Gofer>>commit:"
+  * fix Issue 57 "specificy method category for version category in Metacello version constructor"
+  * fix Issue 58 "make #file: optional in project reference specification"
+  * fix Issue 59 "repository overrides should be used for MetacelloPackageSpec>>load"
+  * fix Issue 60 "bypass progress bars...."
+  * fix Issue 64 "update package methods has extra file entry"
+  * fix Issue 66 "loading latest broken by new code in 1.0-beta.24" [MERGE]
+  * #fetch and #fetch: added to MetacelloMcVersion. #fetch and #fetch: correspond to #load and #load: but only download the mcz files to a cacheRepository (controlled by version #loadPolicy)
+  * #fetchProject, #fetchProject:, #updateProject: added to support direct fetch of a project (ala #updateProject)
+  * implement version #record/#record:
+  * implement version #silently: for Issue 60
+  * implement non-interactive commit support using gofer: MetacelloMCProject>>goferCommitProject:, MetacelloPackageSpec>>goferCommitPackage:
 ===1.0-beta.24====
   * DaleHenrichs 2/18/2010 15:44
   * Announcements
