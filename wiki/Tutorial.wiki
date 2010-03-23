@@ -11,5 +11,6 @@ After taking the tutorial, visit [APIReference API reference page] for an overvi
 
 To create your own Metacello configuration, run the ProfStef tutorial:
 {{{
+ConfigurationOfMetacello project latestVersion load: #('Tutorial').
 ProfStef goOn: MetacelloCreateConfigurationTutorial.
 }}}
