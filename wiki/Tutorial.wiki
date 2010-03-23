@@ -1,5 +1,5 @@
 #summary Metacello Tutorial
-#labels Tutorial
+#labels Tutorial,Featured
 
 
 ==Image-based Tutorial==
