@@ -7,7 +7,7 @@ As of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions
 
 [http://gemstonesoup.files.wordpress.com/2010/03/metacellotools.png]
 
-  * [MetacelloTools#Save_Packages Save Packages (nested)]
+  * [MetacelloTools#Save_Packages_(nested) Save Packages (nested)]
   * [MetacelloTools#Spawn_New_Version Spawn New Version]
   * [MetacelloTools#Update_Package_Methods Update Package Methods]
   * [MetacelloTools#Current_Project_Version Current Project Version]
