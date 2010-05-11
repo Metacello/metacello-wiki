@@ -1,10 +1,10 @@
 #summary Steps to create a Metacello configuration
 
- # [CreateMetacelloConfiguration#Copy_Template Create a configuration class for you project by copying the MetacelloConfigTemplate.]
- # [CreateMetacelloConfiguration#Create_Baseline Create a baseline version for your project.]
- # [CreateMetacelloConfiguration#Create_Release_Version Create the initial release version for your project.]
- # [CreateMetacelloConfiguration#Load_Release_Version Test your confiugration by loading version 1.0]
- # [CreateMetacelloConfiguration#Create_Development_Version Create a development version for your project]
+ # [CreateMetacelloConfiguration#Copy_Template Create a configuration class for your project by copying MetacelloConfigTemplate.]
+ # [CreateMetacelloConfiguration#Create_Baseline Create a baseline version.]
+ # [CreateMetacelloConfiguration#Create_Release_Version Create an initial release version.]
+ # [CreateMetacelloConfiguration#Load_Release_Version Test your confiugration.]
+ # [CreateMetacelloConfiguration#Create_Development_Version Create a development version.]
 ===Copy Template===
 Create a configuration class for you project by copying the MetacelloConfigTemplate: 
 {{{
@@ -86,3 +86,6 @@ ConfigurationOfMyProject compile:
 			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.4''].'
 classified: 'versions'.
 }}}
+Versions with #development blessing are not included in the list of versions returned by #latestVersion, so marking a version as #development effectively hides the version from casual users. 
+
+The #development version marks the version as unstable, so you can feel free to edit the version until you are ready to release the version. Once a version is no longer marked as #development, the information in the version should not be changed. If you need to make a bugfix, you should create a new version for the project.
