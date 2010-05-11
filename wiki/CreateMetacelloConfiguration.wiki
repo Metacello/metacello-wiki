@@ -50,6 +50,19 @@ The structural information doesn't change a lot over time and as you will see th
 
 By convention, we name the method #baselineXXX:, where XXX relates to the baseline version being created. The method name is not relevant as the important version information is contained in the pragma, <version: '1.0-baseline'>, but a meaningful is useful in the method list.
 ===Create Release Version===
+Next, create the initial release version for your project in the versions category. Note that the 1.0-baseline is imported into version 1.0. The structural information specified in 1.0-baseline is inherited:
+{{{
+ConfigurationOfMyProject compile:
+'version100: spec 
+	<version: ''1.0'' imports: #(''1.0-baseline'') >
+	
+	spec for: #common do: [
+		spec blessing: #release.
+		spec 
+			package: ''Example-Core'' with: ''Example-Core-DaleHenrichs.1'';
+			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.1''].'
+classified: 'versions'.
+}}}
 ===Create Development Version===
 
 ===Load Version===
