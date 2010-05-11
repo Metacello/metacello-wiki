@@ -2,9 +2,9 @@
 
  # [CreateMetacelloConfiguration#Copy_Template Create a configuration class for you project by copying the MetacelloConfigTemplate.]
  # [CreateMetacelloConfiguration#Create_Baseline Create a baseline version for your project.]
- # [CreateMetacelloConfiguration#Create_Release_Version]
- # [CreateMetacelloConfiguration#Create_Development_Version]
- # [CreateMetacelloConfiguration#Load_Version]
+ # [CreateMetacelloConfiguration#Create_Release_Version Create the initial release version for your project.]
+ # [CreateMetacelloConfiguration#Load_Release_Version Test your confiugration by loading version 1.0]
+ # [CreateMetacelloConfiguration#Create_Development_Version Create a development version for your project]
 ===Copy Template===
 Create a configuration class for you project by copying the MetacelloConfigTemplate: 
 {{{
@@ -63,6 +63,26 @@ ConfigurationOfMyProject compile:
 			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.1''].'
 classified: 'versions'.
 }}}
+===Load Release Version===
+Next, test your confiugration by loading version 1.0:
+{{{
+(ConfigurationOfMyProject project version: '1.0') load.
+}}}
+Now, load your tests (if you've packaged them separately:
+{{{
+(ConfigurationOfMyProject project version: '1.0') load: #('Tests').
+}}}
 ===Create Development Version===
-
-===Load Version===
+Next, create a development version for your project in the versions category. Note that the 1.0-baseline is imported into version1.0. The structural information specified in 1.0-baseline is inherited:
+{{{
+ConfigurationOfMyProject compile:
+'version110: spec 
+	<version: ''1.1'' imports: #(''1.0-baseline'') >
+	
+	spec for: #common do: [
+		spec blessing: #development.
+		spec 
+			package: ''Example-Core'' with: ''Example-Core-DaleHenrichs.3'';
+			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.4''].'
+classified: 'versions'.
+}}}
