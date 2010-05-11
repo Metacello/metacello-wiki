@@ -1,0 +1,55 @@
+#summary Steps to create a Metacello configuration
+
+ # [CreateMetacelloConfiguration#Copy_Template Create a configuration class for you project by copying the MetacelloConfigTemplate.]
+ # [CreateMetacelloConfiguration#Create_Baseline Create a baseline version for your project.]
+ # [CreateMetacelloConfiguration#Create_Release_Version]
+ # [CreateMetacelloConfiguration#Create_Development_Version]
+ # [CreateMetacelloConfiguration#Load_Version]
+===Copy Template===
+Create a configuration class for you project by copying the MetacelloConfigTemplate: 
+{{{
+(MetacelloConfigTemplate duplicateClassWithNewName: #ConfigurationOfMyProject)
+	category: 'ConfigurationOfMyProject'.
+}}} 
+By convention we use ''ConfigurationOf'' as the prefix for the name of the configuration class, the name of the class category, and the name of the Monticello package.
+===Create Baseline===
+Next, create a baseline version for your project in the baselines category:
+{{{
+ConfigurationOfMyProject compile:
+'baseline100: spec 
+	<version: ''1.0-baseline''>
+	
+	spec for: #common do: [
+		spec blessing: #baseline.
+		spec repository: ''http://www.example.com/Example''.	
+		spec 
+			package: ''Example-Core'';
+			package: ''Example-Tests'' with: [ spec requires: ''Example-Core'' ].
+		spec
+			group: ''default'' with: #(''Core'');
+			group: ''Core'' with: #(''Example-Core'');
+			group: ''Tests'' with: #(''Example-Tests''). ].'
+classified: 'baselines'.
+}}}
+The #baseline version defines the structural components of your project:
+  * Example project repository: 
+{{{
+      http://www.example.com/Example
+}}}
+  * list of Monticello package names: 
+{{{
+      Example-Core and Example-Tests
+}}}
+  * package dependencies: 
+{{{
+      Example-Tests depends upon Example-Core
+}}}
+  * 3 groups are defined: default, Core, and Tests. By convention the tests are split into a separate group and are not loaded by default (the 'default' group is used to define the list of packages to be loaded by default).
+
+The structural information doesn't change a lot over time and as you will see the baseline version is shared by many concrete versions.
+
+By convention, we name the method #baselineXXX:, where XXX relates to the baseline version being created. The method name is not relevant as the important version information is contained in the pragma, <version: '1.0-baseline'>, but a meaningful is useful in the method list.
+===Create Release Version===
+===Create Development Version===
+
+===Load Version===
