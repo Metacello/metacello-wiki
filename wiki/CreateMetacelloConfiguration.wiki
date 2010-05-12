@@ -65,7 +65,7 @@ ConfigurationOfMyProject compile:
 classified: 'versions'.
 }}}
 ===Test Release Version===
-Next, test your confiugration by loading version 1.0:
+Next, test your configuration by loading version 1.0:
 {{{
 (ConfigurationOfMyProject project version: '1.0') load.
 }}}
