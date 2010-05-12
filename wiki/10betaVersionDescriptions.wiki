@@ -5,12 +5,6 @@
   * DaleHenrichs 5/12/2010 12:19
   * Announcements
     * [http://groups.google.com/group/metacello/msg/f930b9ef5d4db174 1.0-beta.26.1 released]
-  * Documentation
-    * Fetch and Record
-      * [DeterminingWhichMCZFileWillBeLoaded Determining which mcz files will be loaded]
-      * [ProgrammaticFetchLoad Programmatic fetch/load]
-      * [MaintainingSecondaryRepository Maintaining a secondary repository for Metacello]
-      * [UsingLocalDirectoryRepository Using a local directory repository]
   * fix and test coverage for bug involving a postload doit with linear load nested inside an atomic load
   * when loading a project reference, do not load mcz files that are older than the currently loaded mcz files (implicit version request). Older files will be loaded if directly referenced from the project being loaded (explicit version request).
   * add RETRY logic to handle HTTP droppage
@@ -20,11 +14,11 @@
     * [http://groups.google.com/group/metacello/browse_frm/thread/1d6a5ccb46167bcf 1.0-beta.26 released]
     * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged Metacello 1.0-beta.25 forged]
   * Documentation
-    * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged Metacello 1.0-beta.25 forged]
-        * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged/#fetchrecord fetch]
-        * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged/#fetchrecord record]
-        * version [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged/#api API additions]
-        * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged/#toolsave nested Save Packages] command
+    * Fetch and Record
+      * [DeterminingWhichMCZFileWillBeLoaded Determining which mcz files will be loaded]
+      * [ProgrammaticFetchLoad Programmatic fetch/load]
+      * [MaintainingSecondaryRepository Maintaining a secondary repository for Metacello]
+      * [UsingLocalDirectoryRepository Using a local directory repository]
   * put comment in MetacelloMCProject>>#updateProject to warn about refreshing instance.
   * helper messages: #cacheRepository: and #ignoreImage: added to MetacelloMCVersion
   * refactor directive hierarchy for post/pre Load directives add #postLoadDo: and #preLoadDo: to round out API
