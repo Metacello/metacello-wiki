@@ -1,4 +1,5 @@
 #summary Steps to create a Metacello configuration for your own project
+#labels Featured
 
  # [CreateMetacelloConfiguration#Copy_Template Create a configuration class for your project by copying MetacelloConfigTemplate.]
  # [CreateMetacelloConfiguration#Create_Baseline Create a baseline version.]
