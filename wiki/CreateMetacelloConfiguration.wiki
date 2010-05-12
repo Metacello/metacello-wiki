@@ -9,7 +9,7 @@
 
 If you haven't already installed Metacello, follow these [DownloadMetacello installation instructions].
 
-Before building your configuration you should take the [Tutorial Metacello Tutorial]
+Before building your configuration you should take the [Tutorial Metacello Tutorial].
 ===Copy Template===
 Create a configuration class for you project by copying the MetacelloConfigTemplate: 
 {{{
