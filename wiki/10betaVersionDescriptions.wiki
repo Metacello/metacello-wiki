@@ -1,6 +1,12 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.26.1====
+  * DaleHenrichs 5/12/2010 12:19
+  * Announcements
+  * fix and test coverage for bug involving a postload doit with linear load nested inside an atomic load
+  * when loading a project reference, do not load mcz files that are older than the currently loaded mcz files (implicit version request). Older files will be loaded if directly referenced from the project being loaded (explicit version request).
+  * add RETRY logic to handle HTTP droppage
 ===1.0-beta.26====
   * DaleHenrichs 4/12/2010 14:27
   * Announcements
