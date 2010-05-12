@@ -1,0 +1,15 @@
+Here’s an example where we split the fetch and load process so that we can use the loadDirective to determine whether we want to finish doing the load.
+
+Assume that you’ve subclassed some of the classes in the Magritte-Seaside package and you are interested in being notified if a new version of Magritte-Seaside is going to be loaded. The following script uses #packageDirectivesDo: to scan the list of mcz files for a package named ‘Magritte-Seaside’ and throws a halt if one is found. If no Magritte-Seaside package is found, continue with the load using #doLoad:
+{{{
+| version loader | 
+version := ConfigurationOfPier project latestVersion.
+loader := version fetch.
+"Check for Magritte-Seaside package in load directives"
+loader loadDirective packageDirectivesDo: [:directive | 
+  (directive spec name = 'Magritte-Seaside')
+    ifTrue: [ "do something interesting"
+      self halt: 'Magritte-Seaside package loading.' ]].
+"No Magritte-Seaside loading, so finish the load"
+loader doLoad.
+}}}
