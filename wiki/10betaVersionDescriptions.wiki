@@ -12,7 +12,8 @@
   * Announcements
     * [http://groups.google.com/group/metacello/browse_frm/thread/1d6a5ccb46167bcf 1.0-beta.26 released]
     * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged Metacello 1.0-beta.25 forged]
-  * put comment in MetacelloMCProject>>#updateProject to warn about refreshing instance.
+  * Documentation
+    * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged Metacello 1.0-beta.25 forged]  * put comment in MetacelloMCProject>>#updateProject to warn about refreshing instance.
   * helper messages: #cacheRepository: and #ignoreImage: added to MetacelloMCVersion
   * refactor directive hierarchy for post/pre Load directives add #postLoadDo: and #preLoadDo: to round out API
   * clean up null recording loader with respect to fetch and post/pre load doits
