@@ -1,0 +1,34 @@
+#summary Maintaining a secondary repository for Metacello
+
+Here’s an example script showing how I maintain a backup repository for Metacello. In this script I’m interested in fetching ConfigurationOfGofer, ConfigurationOfMetacello and all of the mcz files directly referenced by those two configurations. The cache repository (target for fetches) is http:////www.squeaksource.com/metacello:
+{{{
+| cacheRepository version  |
+cacheRepository := MCHttpRepository
+  location: 'http://www.squeaksource.com/metacello'
+  user: ''
+  password: ''.
+version := ConfigurationOfMetacello project version: '1.0-beta.26'.
+(version record: 'ALL') loadDirective versionDirectivesDo: [:versionDirective |
+  | p pClass |
+  versionDirective spec ~~ nil
+    ifTrue: [
+      p := versionDirective spec project.
+      pClass := p configuration class.
+      "save packages for Gofer and Metacello only"
+      (pClass == ConfigurationOfGofer or: [
+        pClass == ConfigurationOfMetacello  ])
+          ifTrue: [ | policy |
+            policy := (MetacelloLoaderPolicy new)
+                    cacheRepository: cacheRepository;
+                    ignoreImage: true;
+                    yourself.
+            "fetch Gofer or Metacello configuration"
+            p fetchProject: policy.
+            versionDirective packagesDo: [:packageDirective |
+              "skip nested configurations"
+              (packageDirective spec name beginsWith: 'ConfigurationOf')
+                ifFalse: [
+                  "fetch mcz file"
+                  packageDirective spec fetchPackage: policy ]]]]].
+}}}
+I maintain the secondary repository in case the GemSource repository is inaccessible. Use ConfigurationOfMetacello class>>alternateEnsureMetacello to load Metacello from the secondary repository.
