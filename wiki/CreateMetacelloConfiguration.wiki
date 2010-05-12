@@ -4,7 +4,7 @@
  # [CreateMetacelloConfiguration#Copy_Template Create a configuration class for your project by copying MetacelloConfigTemplate.]
  # [CreateMetacelloConfiguration#Create_Baseline Create a baseline version.]
  # [CreateMetacelloConfiguration#Create_Release_Version Create an initial release version.]
- # [CreateMetacelloConfiguration#Load_Release_Version Test your configuration.]
+ # [CreateMetacelloConfiguration#Test_Release_Version Test your configuration.]
  # [CreateMetacelloConfiguration#Create_Development_Version Create a development version.]
 ===Copy Template===
 Create a configuration class for you project by copying the MetacelloConfigTemplate: 
@@ -64,7 +64,7 @@ ConfigurationOfMyProject compile:
 			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.1''].'
 classified: 'versions'.
 }}}
-===Load Release Version===
+===Test Release Version===
 Next, test your confiugration by loading version 1.0:
 {{{
 (ConfigurationOfMyProject project version: '1.0') load.
