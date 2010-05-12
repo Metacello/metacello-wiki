@@ -36,3 +36,5 @@ To create your own Metacello configuration, run the ProfStef tutorial:
 ConfigurationOfMetacello project latestVersion load: #('Tutorial').
 ProfStef goOn: MetacelloCreateConfigurationTutorial.
 }}}
+
+If you don't have access to !ProfStef, follow [CreateMetacelloConfiguration these steps].
