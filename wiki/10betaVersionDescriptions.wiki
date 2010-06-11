@@ -1,6 +1,12 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.26.3====
+  * DaleHenrichs 6/11/2010 11:26
+  * Announcements
+    * 
+  * fix Issue 81 "wrong mcz file can be loaded when mcz file has Monticello dependencies"
+  * fix Issue 82 "Metacello and (Windows) file repositories"
 ===1.0-beta.26.2====
   * DaleHenrichs 5/21/2010 16:26
   * Announcements
