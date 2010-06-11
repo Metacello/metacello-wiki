@@ -4,7 +4,7 @@
 ===1.0-beta.26.3====
   * DaleHenrichs 6/11/2010 11:26
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/browse_frm/thread/0ca7c089d0903c05# Metacello 1.0-beta.26.3 released]
   * fix Issue 81 "wrong mcz file can be loaded when mcz file has Monticello dependencies"
   * fix Issue 82 "Metacello and (Windows) file repositories"
 ===1.0-beta.26.2====
