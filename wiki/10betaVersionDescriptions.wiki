@@ -4,7 +4,7 @@
 ===1.0-beta.27====
   * DaleHenrichs 6/15/2010 11:02
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/browse_frm/thread/79fd63406a17b111 Metacello 1.0-beta.27 released]
     *
   * Updated Wiki Pages
     * [APIReference API reference]
