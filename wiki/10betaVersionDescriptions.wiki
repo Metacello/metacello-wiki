@@ -8,7 +8,7 @@
     *
   * Updated Wiki Pages
     * [APIReference API reference]
-    * 
+    * [EnsureMetacello #ensureMetacello implementation]
   * include Metacello-Help from Torsten
   * test case confirming that group name can be used "anywhere that project/package name can be used"
   * fix Issue 85: "Metacello should load from alternate repository"
