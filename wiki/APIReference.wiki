@@ -1,7 +1,7 @@
 #summary Listing of full Metacello configuration API
 #labels Featured
 
-As of [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.22 1.0-beta.22].
+As of [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.27 1.0-beta.27].
 
 The colorization is funky, but I think it's better than nothing:)
 
@@ -25,8 +25,9 @@ baseline10: spec
 		spec repositories: [
 			"One or more repositories may be defined (MCReposioryGroup). Previous forms useful when specifying a single reposiory."
 			spec 
-				"directory-based repository"
+				"directory-based repositories"
 				repository: '/opt/mc/repository';
+				repository: 'c:\pharo\myapp\repo\';
 				"ftp-based repository ... note, supported in Pharo/Squeak only"					
 				repository: 'ftp://ftp.example.com/repo';
 				"dictionary-based repository ... repository stored at `Smalltalk at: #GlobalName`"		
@@ -39,8 +40,8 @@ baseline10: spec
 			project: 'UI Support' with: [							
 				"One or more of the following attributes may be defined or changed"
 				spec
-					"Name of config class (i.e., MetacelloReferenceBasicConfig)"
-					className: 'UIConfig';
+					"Name of config class (i.e., ConfigurationOfXXX)"
+					className: 'ConfigurationOfUI';
 					"Version of project to be loaded. if theversionString is not specified, then the latest version of the project is used."
 					versionString: '1.0';
 					"Before loading this project, send #preloadForProject to an instance of this config"
@@ -51,19 +52,18 @@ baseline10: spec
 					operator: #~>; 	
 					"OPTIONAL: List of packages to be loaded from project"															
 					loads: #('UI-Core' );	
-					"Name of package containing the config"						
-					file: 'UI-Configuration';	
+					"Optional: Name of package containing the config, by convention same as className"						
+					file: 'ConfigurationOfUI';	
 					"Repository where package resides"					
 					repository: 'http://www.example.com/r' ];	
 			"Create a new project reference to replace existing project reference"
 			project: 'UI Support' overrides: [					
 				"One or more of the following attributes may be defined"
 				spec
-					className: 'UIConfigNew';
+					className: 'ConfigurationOfUINew';
 					versionString: '1.0';
 					operator: #>=;
 					loads: #('UI-Core' 'UI-Tests' );
-					file: 'UI-Configuration';
 					repository: 'http://www.example.com/r' username: 'foo' password: 'bar' ];
 			"Create project reference named 'UI Tests'"
 		 	project: 'UI Tests' 
@@ -72,16 +72,22 @@ baseline10: spec
 				with: [
 					"One or more of the following attributes may be changed"
 					spec
-						className: 'UIConfig';
+						className: 'ConfigurationOfUI';
 						versionString: '1.0';
 						operator: #~>;
 						loads: #('UI-Core' 'UI-Tests' );
-						file: 'UI-Configuration';
 						repository: 'http://www.example.com/r'];
 			"Change the versionString for 'UI Support' to '1.0.1'"
 			project: 'UI Support' with: '1.0.1';	
 			"Remove the project reference 'UI Tests'"				
-			removeProject: 'UI Tests'.	
+			removeProject: 'UI Tests';
+			"Multiple repositories for configuration - config may be found in either repository. 
+			 Secondary repository is useful when primary repository may not be available"
+			project: 'UI Multi' with: [							
+				spec
+					className: 'ConfigurationOfMulti';
+					repository: 'http://www.example.com/r';
+					repository: 'http://www.example.com/s' ].
 		"Create or update 'Example-AddOn' package"								
 		spec 
 			package: 'Example-AddOn' with: [						
@@ -135,4 +141,5 @@ baseline10: spec
 				overrides:  #('Example-Core' 'Example-Tests' );	
 			"Remove the group 'default'"
 			removeGroup: 'default' ].									
+									
 }}}
