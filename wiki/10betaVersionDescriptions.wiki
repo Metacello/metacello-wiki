@@ -1,6 +1,16 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.27====
+  * DaleHenrichs 6/15/2010 11:02
+  * Announcements
+    * 
+    *
+  * include Metacello-Help from Torsten
+  * test case confirming that group name can be used "anywhere that project/package name can be used"
+  * fix Issue 85: "Metacello should load from alternate repository"
+  * pick up OB 1.1.4 for Pharo 1.1 compat
+  * redundant repository for Gofer too
 ===1.0-beta.26.3====
   * DaleHenrichs 6/11/2010 11:26
   * Announcements
