@@ -6,6 +6,7 @@
   * Announcements
     * [http://groups.google.com/group/metacello/browse_frm/thread/79fd63406a17b111 Metacello 1.0-beta.27 released]
     * [http://gemstonesoup.wordpress.com/2010/06/15/metacello-1-0-beta-27-unfurled/ Metacello 1.0-beta.27 unfurled]
+    * [http://lists.gforge.inria.fr/pipermail/pharo-project/2010-June/028369.html (ANN) Metacello 1.0-beta.27]
   * Updated Wiki Pages
     * [APIReference API reference]
     * [EnsureMetacello #ensureMetacello implementation]
