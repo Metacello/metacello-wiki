@@ -14,7 +14,7 @@ Gofer new
 ==Squeak==
   # Execute the following expression in a workspace:
 {{{
-(Installer squeaksource
+Installer squeaksource
     project: 'MetacelloRepository';
     install: 'ConfigurationOfMetacello'. 
 (Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
