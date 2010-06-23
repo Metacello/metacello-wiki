@@ -14,9 +14,9 @@ Gofer new
 ==Squeak==
   # Execute the following expression in a workspace:
 {{{
-(Installer repository:
-    'http://www.squeaksource.com/MetacelloRepository')
-        install: 'ConfigurationOfMetacello'. 
+(Installer squeaksource
+    project: 'MetacelloRepository';
+    install: 'ConfigurationOfMetacello'. 
 (Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
 }}}
 Note that #loadLatestVersion loads a minimum install of Metacello.
