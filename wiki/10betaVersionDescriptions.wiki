@@ -1,6 +1,11 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.27.1====
+  * DaleHenrichs 6/24/2010 20:06
+  * Announcements
+    *
+  * fix for Issue 86 "project references that are supersets of a loaded project reference appear to be partially loaded"
 ===1.0-beta.27====
   * DaleHenrichs 6/15/2010 11:02
   * Announcements
