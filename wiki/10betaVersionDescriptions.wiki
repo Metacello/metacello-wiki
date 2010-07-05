@@ -1,6 +1,11 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.27.2====
+  * DaleHenrichs 7/5/2010 09:31
+  * Announcements
+    * 
+  * OBCmdMetacello >> isActive used #and:and which is deprecated in Pharo 1.1rc4
 ===1.0-beta.27.1====
   * DaleHenrichs 6/24/2010 20:06
   * Announcements
