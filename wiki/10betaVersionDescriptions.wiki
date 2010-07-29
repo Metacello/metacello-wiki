@@ -10,7 +10,7 @@
 ===1.0-beta.27.2====
   * DaleHenrichs 7/5/2010 09:31
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/msg/5b15241e041d7305 Metacello 1.0-beta.27.2 released]
   * OBCmdMetacello >> isActive used #and:and which is deprecated in Pharo 1.1rc4
 ===1.0-beta.27.1====
   * DaleHenrichs 6/24/2010 20:06
