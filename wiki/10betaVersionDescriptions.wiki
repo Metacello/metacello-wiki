@@ -4,7 +4,7 @@
 ===1.0-beta.27.3====
   * DaleHenrichs 7/29/2010 15:56
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/msg/aab513445b201a6d Metacello 1.0-beta.27.3 released]
   * fix for Issue 90: http://code.google.com/p/metacello/issues/detail?id=90 "includes: aglgorithm not aggressive enough"
   * fix for Issue 92: http://code.google.com/p/metacello/issues/detail?id=92 "Trait does not understand #isMetacelloConfig"
 ===1.0-beta.27.2====
