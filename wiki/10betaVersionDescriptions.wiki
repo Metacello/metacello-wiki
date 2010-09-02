@@ -2,6 +2,17 @@
 #labels Featured
 
 ===1.0-beta.27.3====
+  * DaleHenrichs 9/2/2010 13:15
+  * Announcements
+    * 
+  * fix bugs when trying to stash packages and configurations into a repository.
+  * fix Issue 79 "OB-Metacello should use MetacelloMCProjectSpec>>loadVersion: style default packages instead of lastMetacelloVersionLoad"
+  * best fix for Issue 92 "Trait does not understand #isMetacelloConfig"
+  * fix Issue 93 "poor error message when failing to resolve a package in a repository"
+  * fix Issue 94 "lastVersion vs latestVersion"
+  * fix Issue 95 "Infinite project reference loop"
+
+===1.0-beta.27.3====
   * DaleHenrichs 7/29/2010 15:56
   * Announcements
     * [http://groups.google.com/group/metacello/msg/aab513445b201a6d Metacello 1.0-beta.27.3 released]
