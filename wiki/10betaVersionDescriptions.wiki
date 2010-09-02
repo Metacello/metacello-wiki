@@ -4,7 +4,7 @@
 ===1.0-beta.27.3====
   * DaleHenrichs 9/2/2010 13:15
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/browse_frm/thread/363e94e417eb52a7 Metacello 1.0-beta.27.4 released]
   * fix bugs when trying to stash packages and configurations into a repository.
   * fix Issue 79 "OB-Metacello should use MetacelloMCProjectSpec>>loadVersion: style default packages instead of lastMetacelloVersionLoad"
   * best fix for Issue 92 "Trait does not understand #isMetacelloConfig"
