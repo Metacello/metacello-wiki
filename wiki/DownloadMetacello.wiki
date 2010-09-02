@@ -11,20 +11,6 @@ Gofer new
   load.
 (Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
 }}}
-===Pharo 1.2===
-Execute the following expressions in a workspace:
-{{{
- Gofer new
-       squeaksource: 'MetacelloRepository';
-       package: 'ConfigurationOfOmniBrowser';
-       package: 'ConfigurationOfMetacello';
-       load.
-}}}
-then:
-{{{
- (ConfigurationOfOmniBrowser project version: '1.1-baseline') load.
- (ConfigurationOfMetacello project latestVersion) load: 'UI'.
-}}}
 ==Squeak==
 Execute the following expression in a workspace:
 {{{
@@ -38,6 +24,20 @@ Note that #loadLatestVersion loads a minimum install of Metacello.
 To load the OB-based tools, execute the following expression in a workspace (after [DownloadMetacello#Pharo loading Metacello] into your image):
 {{{
      ConfigurationOfMetacello project latestVersion load: #('UI').
+}}}
+===OB tools for Pharo 1.2===
+Execute the following expressions in a workspace:
+{{{
+ Gofer new
+       squeaksource: 'MetacelloRepository';
+       package: 'ConfigurationOfOmniBrowser';
+       package: 'ConfigurationOfMetacello';
+       load.
+}}}
+then:
+{{{
+ (ConfigurationOfOmniBrowser project version: '1.1-baseline') load.
+ (ConfigurationOfMetacello project latestVersion) load: 'UI'.
 }}}
 ==Tutorial & API Reference ==
 To load the [Tutorial tutorial] and [APIReference API reference], execute the following expression in a workspace (after [DownloadMetacello#Pharo loading Metacello] into your image):
