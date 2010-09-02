@@ -3,7 +3,7 @@
 To install the latest version of Metacello (as of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.25 1.0-beta.25]):
 
 ==Pharo==
-  # Execute the following expression in a workspace:
+Execute the following expression in a workspace:
 {{{
 Gofer new
   squeaksource: 'MetacelloRepository';
@@ -12,7 +12,7 @@ Gofer new
 (Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
 }}}
 ===Pharo 1.2===
-  # Execute the following expressions in a workspace:
+Execute the following expressions in a workspace:
 {{{
  Gofer new
        squeaksource: 'MetacelloRepository';
@@ -26,7 +26,7 @@ then:
  (ConfigurationOfMetacello project latestVersion) load: 'UI'.
 }}}
 ==Squeak==
-  # Execute the following expression in a workspace:
+Execute the following expression in a workspace:
 {{{
 Installer squeaksource
     project: 'MetacelloRepository';
