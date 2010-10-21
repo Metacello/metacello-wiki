@@ -84,7 +84,7 @@ You can use #repositoryOverrides: to pass in a list of MCRepsitories to a versio
   | project version repo |
   project := self project.
   version := project version: '1.0'.
-  repo := MCDiDirectoryRepository new.
+  repo := MCDirectoryRepository new.
   repo directory: FileDirectory on: '<path to directory>'.
   version repositoryOverrides: (OrderedCollection with: repo).
   version load.
