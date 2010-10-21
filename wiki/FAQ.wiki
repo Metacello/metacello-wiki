@@ -81,11 +81,10 @@ Specifying a baseline instead of a particular version makes Metacello load the l
 You can use #repositoryOverrides: to pass in a list of MCRepsitories to a version like the following:
 
 {{{
-  | project version repo |
-  project := self project.
-  version := project version: '1.0'.
+  | version repo |
   repo := MCDirectoryRepository new.
   repo directory: FileDirectory on: '<path to directory>'.
+  version := ConfigurationOfXXX project version: '1.0'.
   version repositoryOverrides: (OrderedCollection with: repo).
   version load.
 }}}
