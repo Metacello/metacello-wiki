@@ -32,3 +32,39 @@ version := ConfigurationOfMetacello project version: '1.0-beta.26'.
                   packageDirective spec fetchPackage: policy ]]]]].
 }}}
 I maintain the secondary repository in case the GemSource repository is inaccessible. As of [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.27 Metacello 1.0-beta.27] the secondary repository is automatically used if the primary repository is not available.
+
+Here's another example where all of the mcz packages and configs are copied to the cacheRepository:
+{{{
+        | cacheRepository version map | 
+        cacheRepository := MCHttpRepository 
+             location: '<repository URL>' 
+             user: '' 
+             password: ''. 
+        "need to pick up existing repository with user and password set 
+          supply user/password args" 
+        cacheRepository := MCRepositoryGroup default repositories 
+                detect: [ :each | each = cacheRepository ] 
+                ifNone: [ cacheRepository ]. 
+
+        ConfigurationOfSeaside30 project updateProject. 
+        version := ConfigurationOfSeaside30 project 
+             version: '3.0.0-rc.2'. 
+
+        "update configs that are already loaded ... 
+          might be able to skip this" 
+        map := Dictionary new. 
+        (version record: 'ALL') loadDirective 
+                versionDirectivesDo: [ :versionDirective | 
+                        versionDirective spec ~~ nil 
+                                ifTrue: [ | p| 
+                                  p:= versionDirective spec project. 
+                                  map at: p configuration put: p ] ]. 
+        map values do: [:p | p updateProject  ]. 
+
+        "point to target cacheRepository, ignoreImage so all packages 
+          are fetched and fetch away" 
+        version cacheRepository: cacheRepository. 
+        version ignoreImage: true. 
+        version fetch: 'ALL' 
+
+}}}
