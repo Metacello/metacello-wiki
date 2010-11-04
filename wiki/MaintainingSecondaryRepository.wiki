@@ -36,10 +36,8 @@ I maintain the secondary repository in case the GemSource repository is inaccess
 Here's another example where all of the mcz packages and configs are copied to the cacheRepository:
 {{{
         | cacheRepository version map | 
-        cacheRepository := MCHttpRepository 
-             location: '<repository URL>' 
-             user: '' 
-             password: ''. 
+        cacheRepository := MCDirectoryRepository new. 
+        cacheRepository directory: (FileDirectory on: '<path to directory>'). 
         "need to pick up existing repository with user and password set 
           supply user/password args" 
         cacheRepository := MCRepositoryGroup default repositories 
@@ -67,4 +65,14 @@ Here's another example where all of the mcz packages and configs are copied to t
         version ignoreImage: true. 
         version fetch: 'ALL' 
 
+}}}
+
+You can load from the secondary repository using the following expression:
+{{{
+   | version repo | 
+   repo := MCDirectoryRepository new. 
+   repo directory: (FileDirectory on: '<path to directory>'). 
+   version := ConfigurationOfXXX project version: '1.0'. 
+   version repositoryOverrides: (OrderedCollection with: repo). 
+   version load. 
 }}}
