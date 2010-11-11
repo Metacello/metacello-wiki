@@ -1,7 +1,11 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
-===1.0-beta.27.3====
+===1.0-beta.27.5====
+  * DaleHenrichs 11/11/2010 11:29
+  * fixes needed for new bootstrapping scheme in GemStone3.0
+  * stop using deprecated in Pharo1.2 methods (sortBy:)
+===1.0-beta.27.4====
   * DaleHenrichs 9/2/2010 13:15
   * Announcements
     * [http://groups.google.com/group/metacello/browse_frm/thread/363e94e417eb52a7 Metacello 1.0-beta.27.4 released]
