@@ -91,6 +91,7 @@
 ===1.0-beta.25====
   * DaleHenrichs 3/23/2010 15:24
   * Announcements
+    * [http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged 1.0-beta.25 forged]
     * [http://groups.google.com/group/metacello/browse_frm/thread/10a08c7c3eadeecd 1.0-beta.25 released]
   * Updated Pages
     * DownloadMetacello
