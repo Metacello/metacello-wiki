@@ -1,6 +1,34 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.28====
+  * DaleHenrichs 1/16/2011 09:43
+  * Announcements
+    * 
+  * pick up #versionKey from work done with Simon during ESUG 2010
+  * add MetacelloPlatform>>primeStackCacheWith:doing: from work done with Simon during ESUG 2010
+  * deprecate MetacelloPlatform>>primeStackCacheFor:doing:defaultDictionary:
+  * add primeStackCache tests
+  * dynamic caching for 5x speedup of #currentVersion
+  * standard Pharo version attributes: #''pharo1.x'', #''pharo1.0.x'', #''pharo1.1.x'', #''pharo1.2.x''
+  * throw an error when a version is not found
+  * collapse running zeroes in a version number in absence of a numeric element
+  * introduce MetacelloBaseConfiguration added so that Configurations can have a superclass (not yet ready for use)
+  * introduce symbolic versions. 
+    * #development, #stable, and #bleedingEdge are standard versions.
+    * a default is defined for #bleedingEdge
+  * fix Issue 100: http://code.google.com/p/metacello/issues/detail?id=100 "last block wins when there are duplicate attribute blocks"
+  * added two new commands for OB-Metacello: ''Validate Configuration'' and ''ValidateConfiguration Version''
+  * MetacelloToolBox added
+  * transferred tutorial lessons to ProfStef
+  * convert OB-Metacello to use MetacelloToolbox API
+  * update comments for api documentation
+  * help browser documentation loaded as part of default group (for Pharo....for now)
+  * speed up running of tests ... 3x faster
+  * postLoad and preLoad doit behavior cleaned up with regards to overriding behaviour using nil arg (i.e.,  stop preload/postload doits)
+  * add Squeak attributes: #''squeak3.10.x'', #''squeak4.1.x'', and #''squeak4.2.x''
+  * fix pharo bug 3516: http://code.google.com/p/pharo/issues/detail?id=3516 "Failing tests in MetaCello"
+  * OB-Metacello commands functional in Pharo1.2
 ===1.0-beta.27.5====
   * DaleHenrichs 11/11/2010 11:29
   * fixes needed for new bootstrapping scheme in GemStone3.0
