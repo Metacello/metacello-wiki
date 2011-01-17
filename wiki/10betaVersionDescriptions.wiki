@@ -4,7 +4,8 @@
 ===1.0-beta.28====
   * DaleHenrichs 1/17/2011 10:12
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/browse_frm/thread/16a842a4251c7c13 Metacello 1.0-beta.28 released]
+    * [http://gemstonesoup.wordpress.com/2011/01/17/metacello-1-0-beta-28-unearthed/ Metacello 1.0-beta.28 unearthed]
   * pick up #versionKey from work done with Simon during ESUG 2010
   * add MetacelloPlatform>>primeStackCacheWith:doing: from work done with Simon during ESUG 2010
   * deprecate MetacelloPlatform>>primeStackCacheFor:doing:defaultDictionary:
