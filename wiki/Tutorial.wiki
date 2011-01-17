@@ -5,7 +5,7 @@
 ==Image-based Tutorial==
 To run the Tutorial, first [DownloadMetacello#Tutorial_&_API_Reference load] the Metacello Tutorial into your image:
 {{{
-ConfigurationOfMetacello project latestVersion load: #('Tutorial').
+(ConfigurationOfMetacello project version: #stable) load: #('Tutorial').
 }}}
 
 Then:
@@ -19,7 +19,7 @@ After taking the tutorial, visit [APIReference API reference page] for an overvi
 To create your own Metacello configuration, run the ProfStef tutorial:
 {{{
 ConfigurationOfMetacello project latestVersion load: #('Tutorial').
-ProfStef goOn: MetacelloCreateConfigurationTutorial.
+ProfStef goOn: MetacelloDevelopmentProcess.
 }}}
 
 If you don't have access to !ProfStef, follow [CreateMetacelloConfiguration these steps].
