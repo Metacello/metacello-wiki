@@ -1,6 +1,6 @@
 #summary Download instructions for bootstrapping Metacello in a Squeak or Pharo image
 #labels Featured
-To install the latest version of Metacello (as of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.25 1.0-beta.25]):
+To install the latest version of Metacello (as of version [http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.28 1.0-beta.28]):
 
 ==Pharo==
 Execute the following expression in a workspace:
