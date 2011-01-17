@@ -59,7 +59,7 @@ To control the loadType for a project, edit your #project method to look like th
 To create your own Metacello configuration, follow the step by step instructionsi in the ProfStef tutorial:
 {{{
 ConfigurationOfMetacello project latestVersion load: #('Tutorial').
-ProfStef goOn: MetacelloCreateConfigurationTutorial.
+ProfStef goOn: MetacelloDevelopmentProcess.
 }}}
 
 If you don't have access to !ProfStef, follow [CreateMetacelloConfiguration these steps].
