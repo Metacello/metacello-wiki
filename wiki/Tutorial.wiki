@@ -8,7 +8,13 @@ To run the Tutorial, first [DownloadMetacello#Tutorial_&_API_Reference load] the
 (ConfigurationOfMetacello project version: #stable) load: #('Tutorial').
 }}}
 
-Then:
+Then using ProfStef:
+{{{
+ProfStef goOn: MetacelloConfigurationTutorialPart1.
+ProfStef goOn: MetacelloConfigurationTutorialPart2.
+ProfStef goOn: MetacelloDevelopmentProcess.
+}}}
+Or via browser:
   # Open two code browsers on the MetacelloTutorialConfig class. 
   # In the lefthand browser view the methods in the 'lessons' category. 
   # In the righthand browser view the '--all--' category. 
