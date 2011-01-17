@@ -9,7 +9,7 @@ Gofer new
   squeaksource: 'MetacelloRepository';
   package: 'ConfigurationOfMetacello';
   load.
-(Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
+(Smalltalk at: #ConfigurationOfMetacello) perform: #load.
 }}}
 ==Squeak==
 Execute the following expression in a workspace:
@@ -17,28 +17,15 @@ Execute the following expression in a workspace:
 Installer squeaksource
     project: 'MetacelloRepository';
     install: 'ConfigurationOfMetacello'. 
-(Smalltalk at: #ConfigurationOfMetacello) perform: #loadLatestVersion.
+(Smalltalk at: #ConfigurationOfMetacello) perform: #load.
 }}}
 Note that #loadLatestVersion loads a minimum install of Metacello.
 ==OB Tools==
 To load the OB-based tools, execute the following expression in a workspace (after [DownloadMetacello#Pharo loading Metacello] into your image):
 {{{
-     ConfigurationOfMetacello project latestVersion load: #('UI').
+     (ConfigurationOfMetacello project version: #stable) load: #('UI').
 }}}
-===OB tools for Pharo 1.2===
-Execute the following expressions in a workspace:
-{{{
- Gofer new
-       squeaksource: 'MetacelloRepository';
-       package: 'ConfigurationOfOmniBrowser';
-       package: 'ConfigurationOfMetacello';
-       load.
-}}}
-then:
-{{{
- (ConfigurationOfOmniBrowser project version: '1.1-baseline') load.
- (ConfigurationOfMetacello project latestVersion) load: 'UI'.
-}}}
+
 ==Tutorial & API Reference ==
 To load the [Tutorial tutorial] and [APIReference API reference], execute the following expression in a workspace (after [DownloadMetacello#Pharo loading Metacello] into your image):
 {{{
@@ -48,7 +35,7 @@ To load the [Tutorial tutorial] and [APIReference API reference], execute the fo
 To create your own Metacello configuration, run the ProfStef tutorial:
 {{{
 ConfigurationOfMetacello project latestVersion load: #('Tutorial').
-ProfStef goOn: MetacelloCreateConfigurationTutorial.
+ProfStef goOn: MetacelloDevelopmentProcess.
 }}}
 
 If you don't have access to !ProfStef, follow [CreateMetacelloConfiguration these steps].
