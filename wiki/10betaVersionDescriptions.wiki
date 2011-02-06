@@ -4,7 +4,7 @@
 ===1.0-beta.28.3====
   * DaleHenrichs 02/02/2011 17:07:53
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/browse_frm/thread/970f66f41011d14c Metacello 1.0-beta.28.3]
   * fix errors in MetacelloVersionValidator class>>populateReasonCodeDescriptions and MetacelloMCVersionValidator class>>populateReasonCodeDescriptions
   * #sort: needs to be used instead of #sorted: for GemStone3.0 compatability
   * after sorting reconvert Arrays to OrderedCollections
