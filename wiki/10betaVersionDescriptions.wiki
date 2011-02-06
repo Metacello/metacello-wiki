@@ -1,10 +1,24 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
-===1.0-beta.28,1====
-  * DaleHenrichs 1/21/2011 09:33
+===1.0-beta.28.3====
+  * DaleHenrichs 02/02/2011 17:07:53
   * Announcements
     * 
+  * fix errors in MetacelloVersionValidator class>>populateReasonCodeDescriptions and MetacelloMCVersionValidator class>>populateReasonCodeDescriptions
+  * #sort: needs to be used instead of #sorted: for GemStone3.0 compatability
+  * after sorting reconvert Arrays to OrderedCollections
+  * when saving packages and configuration, dump diffs to Transcript
+  * fix a spot where refresh of package is needed while calculating current version (when in #development)
+  * add #maglev attribute for conditional maglev code [GemStone]
+===1.0-beta.28.2====
+  * DaleHenrichs 1/23/2011 10:46
+  * Announcements
+    * [http://groups.google.com/group/metacello/browse_frm/thread/216a67b1897331a4 Metacello 1.0-beta.28.2]
+===1.0-beta.28.1====
+  * DaleHenrichs 1/21/2011 09:33
+  * Announcements
+    * [http://groups.google.com/group/metacello/browse_frm/thread/a1823a5ce1ccd22d Metacello 1.0-beta.28.1]
   * fix MetacelloProject>>stableVersion and MetacelloProject>>lastVersion
 ===1.0-beta.28====
   * DaleHenrichs 1/17/2011 10:12
