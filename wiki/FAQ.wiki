@@ -91,3 +91,14 @@ You can use #repositoryOverrides: to pass in a list of MCRepsitories to a versio
 
 The list of repositories overrides every repository specified in the config. Note that automatic update of development configs doesn't honor repositoryOverrides: ... yet.
 ----
+==How do I create a local cache repository for a config?==
+You can use #cacheRepository: to specify a repository into which mcz files are stored during a #fetch operation:
+{{{
+  | version cacheRepository |
+   version := (Smalltalk at: #ConfigurationOfXXX) project latestVersion.
+   cacheRepository := MCDirectoryRepository new
+         directory: (FileDirectory on: '<path to directory>').
+   version cacheRepository: cacheRepository.
+   version fetch.
+}}}
+----
