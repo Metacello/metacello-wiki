@@ -6,7 +6,7 @@
  # *[FAQ#Controlling_Package_Initialization_Order How do I control initialization order of packages in Metacello?]*
  # *[FAQ#How_do_I_load_the_last_version_of_a_project? How do I load the last version of a project?]*
  # *[FAQ#How_do_I_override_the_repository_for_a_config? How do use the local disk repository to install a configuration from without editting the config?]*
- # *[FAQ#How_do_I_create_a_local_cache_repository_for_a_config? How do I create a local cache repository for a config?]
+ # *[FAQ#How_do_I_create_a_local_cache_repository_for_a_config? How do I create a local cache repository for a config?]*
 ----
 ----
 ==Load Latest For Nested Projects==
@@ -91,6 +91,8 @@ You can use #repositoryOverrides: to pass in a list of MCRepsitories to a versio
 }}}
 
 The list of repositories overrides every repository specified in the config. Note that automatic update of development configs doesn't honor repositoryOverrides: ... yet.
+
+See [FAQ#How_do_I_create_a_local_cache_repository_for_a_config? How do I create a local cache repository for a config?] for information on creating a local cache repository.
 ----
 ==How do I create a local cache repository for a config?==
 You can use #cacheRepository: to specify a repository into which mcz files are stored during a #fetch operation:
@@ -102,4 +104,5 @@ You can use #cacheRepository: to specify a repository into which mcz files are s
    version cacheRepository: cacheRepository.
    version fetch.
 }}}
+See [FAQ#How_do_I_override_the_repository_for_a_config? How do use the local disk repository to install a configuration from without editting the config?] for information on loading from a local cache repository.
 ----
