@@ -7,7 +7,7 @@
  # *[FAQ#How_do_I_load_the_last_version_of_a_project? How do I load the last version of a project?]*
  # *[FAQ#How_do_I_override_the_repository_for_a_config? How do use the local disk repository to install a configuration from without editting the config?]*
  # *[FAQ#How_do_I_create_a_local_cache_repository_for_a_config? How do I create a local cache repository for a config?]*
- # *[FAQ#How_diamond_like_dependencies_are_handled? How diamond-like dependencies are handled?]*
+ # *[FAQ#How_diamond_like_dependencies_are_handled? How diamond like dependencies are handled?]*
 ----
 ----
 ==Load Latest For Nested Projects==
