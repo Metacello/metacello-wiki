@@ -109,9 +109,9 @@ See [FAQ#How_do_I_override_the_repository_for_a_config? How do use the local dis
 ----
 ==How diamond-like dependencies are handled?==
 Consider three configurations, for Moose, PetitParser and Glamour:
-  - Moose depends on the version default of Glamour
-  - Moose depends on version 1.0 of PetitParser
-  - PetitParser depends on version 2.0-beta of Glamour
+- Moose depends on the version default of Glamour
+- Moose depends on version 1.0 of PetitParser
+- PetitParser depends on version 2.0-beta of Glamour
 
 What gets loaded by Moose at the end? default or 2.0-beta?
 
