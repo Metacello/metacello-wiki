@@ -107,7 +107,7 @@ You can use #cacheRepository: to specify a repository into which mcz files are s
 }}}
 See [FAQ#How_do_I_override_the_repository_for_a_config? How do use the local disk repository to install a configuration from without editting the config?] for information on loading from a local cache repository.
 ----
-==How diamond-like dependencies are handled?==
+==How diamond like dependencies are handled?==
 Consider three configurations, for Moose, PetitParser and Glamour:
 - Moose depends on the version default of Glamour
 - Moose depends on version 1.0 of PetitParser
