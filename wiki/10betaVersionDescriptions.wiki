@@ -4,7 +4,7 @@
 ===1.0-beta.28.3.1====
   * DaleHenrichs 02/25/2011 19:42
   * Announcements
-    * 
+    * [http://groups.google.com/group/metacello/browse_frm/thread/f60f4ba506f273e7 Metacello 1.0-beta.28.3.1 released]
   * fix Issue 3758: Metacello has 12 failing tests in 1.2
   * well ... add expectedFails for the tests are failing due to the fix for Pharo Issue 3660
 ===1.0-beta.28.3====
