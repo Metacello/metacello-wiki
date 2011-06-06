@@ -14,3 +14,5 @@ bootstrapPackage: aString from: aPath
 			version load.
 			version workingCopy repositoryGroup addRepository: repository]
 }}}
+
+Used in the implementation of the [EnsureMetacello #ensureMetacello] method.
