@@ -39,3 +39,5 @@ ensureMetacello
 		"shouldn't get here unless the load failed ... throw an error"
 		self error: 'retry with alternate repository failed: ', error description printString ]
 }}}
+
+See also [BootstrapPackageFrom bootstrapPackage:from:] for additional details.
