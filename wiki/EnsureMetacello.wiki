@@ -40,4 +40,4 @@ ensureMetacello
 		self error: 'retry with alternate repository failed: ', error description printString ]
 }}}
 
-See also [BootstrapPackageFrom bootstrapPackage:from:] for additional details.
+See also [BootstrapPackageFrom #bootstrapPackage:from:] for additional implementation details.
