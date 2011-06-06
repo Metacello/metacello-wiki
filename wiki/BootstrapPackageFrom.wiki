@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Suggested implementation for configuration class-side #bootstrapPackage:from: method.
 
 {{{
 bootstrapPackage: aString from: aPath 
