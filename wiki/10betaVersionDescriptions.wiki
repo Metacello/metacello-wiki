@@ -1,6 +1,21 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.29====
+  * DaleHenrichs 06/7/2011 16:02
+  * Announcements
+  * SIGNIFICANT speedup for load/fetch/currentVersion operations. More caching and better algorithms.
+  * Warn about newer versions in repository. MetacelloToolBox class>>saveModifiedDevelopmentPackages:for:description:.
+  * MetacelloBrowser support.
+  * experimental support for branching configurations (mcz level branch)
+  * fix Issue 108: Need to update Metacello (tests and Gofer config) to integrate changes from Pharo Issue 3660
+  * fix Issue 112: direct version load (upgrade) of config doesn''t update already loaded mcz files
+  * fix Issue 115: Invalid method construction by toolbox
+  * fix Issue 118: dirty package after merge skews currentVersion calculation
+  * fix Issue 120: lessons methods disapppeared in Metacello-Tutorial-DaleHenrichs.24
+  * fix Issue 122: misleading error message regarding stable versions
+  * fix Issue 123: broken development scenario
+
 ===1.0-beta.28.3.1====
   * DaleHenrichs 02/25/2011 19:42
   * Announcements
