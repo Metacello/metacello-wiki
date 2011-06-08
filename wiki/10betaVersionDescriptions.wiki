@@ -4,6 +4,8 @@
 ===1.0-beta.29====
   * DaleHenrichs 06/7/2011 16:02
   * Announcements
+    * [http://gemstonesoup.wordpress.com/2011/06/07/metacello-1-0-beta-29-unlocked Metacello 1.0-beta.29 unlocked]
+    * [http://groups.google.com/group/metacello/msg/d4ebc88080eea203 Metacello 1.0-beta.29 released]
   * SIGNIFICANT speedup for load/fetch/currentVersion operations. More caching and better algorithms.
   * Warn about newer versions in repository. MetacelloToolBox class>>saveModifiedDevelopmentPackages:for:description:.
   * MetacelloBrowser support.
