@@ -9,7 +9,7 @@
   * Pharo1.4 attributes. tests pass, but ProfStef apparently has not been ported (yet)
   * another round of performance improvements with significant speedups for #currentVersion, #project,  #versionStatus and friends
   * tweak MetacelloToolBox class>>saveModifiedPackagesAndConfigurationIn:description: so that description is updated when you package updates are needed.
-  * persistent author initials can be set by defining #'GS_tODE_AuthorInitials' in UserGlobals with desired author initials string (in support of tODE) [GemStone only]
+  * persistent author initials can be set by defining #'GS_tODE_AuthorInitials' in UserGlobals with desired author initials string (in support of tODE) (GemStone only)
   * allow configuration branches to be used in a project reference (className: is name sans branch, file: is name with branch)
   * fix validation when branched configuration is used
   * fix Issue 136: load of referenced project can fail with missing version error
