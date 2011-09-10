@@ -4,8 +4,8 @@
 ===1.0-beta.30====
   * DaleHenrichs 9/9/2011 15:48
   * Announcements
-    * 
-    * 
+    * [http://gemstonesoup.wordpress.com/2011/09/09/metacello-1-0-beta-30-unfettered/ Metacello 1.0-beta.30 unfettered]
+    * [http://groups.google.com/group/metacello/browse_frm/thread/e6781e9777ae9771 Metacello 1.0-beta.30 released]
   * Pharo1.4 attributes. tests pass, but ProfStef apparently has not been ported (yet)
   * another round of performance improvements with significant speedups for #currentVersion, #project,  #versionStatus and friends
   * tweak MetacelloToolBox class>>saveModifiedPackagesAndConfigurationIn:description: so that description is updated when you package updates are needed.
