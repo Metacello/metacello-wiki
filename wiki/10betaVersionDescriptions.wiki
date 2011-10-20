@@ -1,6 +1,21 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.31====
+  * DaleHenrichs 10/20/2011 14:33
+  * Announcements
+  * 1.0-beta.31 (dkh.633);
+   * clean up port to GemStone
+  * 1.0-beta.31 (dkh.635):
+   * fix for GemStone version of Pharo Issue 4613 .... derive attributes from GemStone version string
+   * get Monticello configuration from correct repository
+  * 1.0-beta.31 (dkh.636):
+   * use Gofer 1.0.5.1 (for GemStone)
+  * 1.0-beta.31 (dkh.637):
+   * changing the comparison logic for Monticello branches. It used to be that branched Monticello packages had a funky sort order based on lenght of the branch, etc ... total malarkey really. For Metacello when a branched package is compared to a non-branched package that just just fail the comparisons and there is no "latest" relationship in either direction ... this has the effect of forcing an override of non-branched by branched and vice versa. Also if two versions differ in author name only, they compare equal ... no good can come of that situation no matter how you cut it.  Considering that I believe that GemStone is the only place where branched Monticello packages are regularly used in a configuration, I feel pretty confident that if I make GemStone happy everyone else will be happy as well.
+  * 1.0-beta.31 (dkh.638):
+   * previous checkin was too aggressive ... there needs to be a consistent package ordering scheme or else seesaw loading will ensue
+   * version number is the primary sorting key when package names are the same ... branch then author is used only when version numbers are the same 
 ===1.0-beta.30====
   * DaleHenrichs 9/9/2011 15:48
   * Announcements
