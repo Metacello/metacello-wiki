@@ -4,6 +4,7 @@
 ===1.0-beta.31====
   * DaleHenrichs 10/20/2011 14:33
   * Announcements
+    * [http://groups.google.com/group/metacello/msg/3f7db67e3a5a4e0d 1.0-beta.31 released]
   * 1.0-beta.31 (dkh.633);
    * clean up port to GemStone
   * 1.0-beta.31 (dkh.635):
