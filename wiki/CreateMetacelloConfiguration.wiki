@@ -78,7 +78,7 @@ Now, load your tests (if you've packaged them separately:
 (ConfigurationOfMyProject project version: '1.0') load: #('Tests').
 }}}
 ===Create Development Version===
-Next, create a development version for your project in the versions category. Note that the 1.0-baseline is imported into version1.0. The structural information specified in 1.0-baseline is inherited:
+Next, create a development version for your project in the versions category. Note that the 1.0-baseline is imported into version1.1. The structural information specified in 1.0-baseline is inherited:
 {{{
 ConfigurationOfMyProject compile:
 'version110: spec 
