@@ -1,6 +1,24 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.31.1====
+  * DaleHenrichs 11/17/2011 13:33
+  * Announcements
+  * 1.0-beta.31.1 (dkh.642);
+   * open 1.0-beta.31.1 for development
+   * GemStone/S 2.4.5 support
+   * missing OB dependency for GemStone
+  * 1.0-beta.31.1 (dkh.643);
+   * GsMonticello 0.242
+  * 1.0-beta.31.1 (dkh.644);
+   * trigger #gemstone10beta311PostLoadDoIt
+  * 1.0-beta.31.1 (dkh.645);
+   * fix Issue 155: Notification for skipped config loads
+  http://code.google.com/p/metacello/issues/detail?id=155
+  * 1.0-beta.31.1 (dkh.646):
+   * help fix GemStone Issue 307: http://code.google.com/p/glassdb/issues/detail?id=307
+  * 1.0-beta.31.1 (dkh.647):
+   * log when loading over modified package ... part of Issue 155
 ===1.0-beta.31====
   * DaleHenrichs 10/20/2011 14:33
   * Announcements
