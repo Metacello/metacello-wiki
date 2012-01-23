@@ -1,0 +1,13 @@
+#summary Adding custom attributes to a configuration (as of Metacello 1.0-beta.32)
+
+=Introduction=
+In a Pharo 1.3 image, the following default attributes are defined:
+{{{
+    #(
+      #common
+      #squeakCommon
+      #pharo
+      #'pharo1.x'
+      #'pharo1.3.x' )
+}}}
+Occasionally it is desirable to customize the set of attrbiutes. For example you might want to add an attribute that allows you to include packages when OmniBrowser is loaded
