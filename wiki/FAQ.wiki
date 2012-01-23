@@ -9,6 +9,7 @@
  # *[FAQ#How_do_I_create_a_local_cache_repository_for_a_config? How do I create a local cache repository for a config?]*
  # *[FAQ#How_diamond_like_dependencies_are_handled? How diamond like dependencies are handled?]*
  # *[http://marianopeck.wordpress.com/2011/11/19/loading-projects-and-building-your-own-images-with-metacello/ How do I use Metacello to load projects and build my own image]*
+ # *[CustomProjectAttrributes How do I conditionally load a project based on a custom attribue?]*
 ----
 ----
 ==Load Latest For Nested Projects==
