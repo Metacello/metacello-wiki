@@ -1,6 +1,17 @@
 #summary Description of the 1.0-beta releases
 #labels Featured
 
+===1.0-beta.31.1.5====
+  * DaleHenrichs 9/14/2012 16:49
+  * Announcements
+  * [https://github.com/dalehenrich/metacello-work/issues/73 fix Issue #73] - update Metacello-MC to a version which adds custom project attribute support to MetacelloConfigTemplate
+  * [https://github.com/dalehenrich/metacello-work/issues/114 fix Issue #114] - get all of the unit tests passing
+  * [https://github.com/dalehenrich/metacello-work/issues/120 fix Issue #120] - nested `version:imports:` cause trouble (1.0-beta.31.1.5)
+  * [https://github.com/dalehenrich/metacello-work/issues/110 fix Issue #110] - allow attribute lists in #for:do: statement
+  * [https://github.com/dalehenrich/metacello-work/issues/69 fix Issue #69] - MetacelloConfigurationTutorial undefined reference to ToolSet
+  * [https://github.com/dalehenrich/metacello-work/issues/115 fix Issue #115] - Version generated from a baseline can have empty package versions in a platform-specific section
+  * [https://github.com/dalehenrich/metacello-work/issues/129 support for Issue #129] - deployment scripts
+
 ===1.0-beta.31.1====
   * DaleHenrichs 11/17/2011 13:33
   * Announcements
