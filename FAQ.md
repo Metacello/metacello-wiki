@@ -1,0 +1,134 @@
+
+---
+
+
+---
+
+## Load Latest For Nested Projects ##
+_For **ConfigurationOfSqueakDBX**, I have defined a baseline with a list of packages and with the following expression, the latest versions of each package will be loaded:_
+
+```
+(ConfigurationOfSqueakDBX project version: '1.1-baseline') load.
+```
+
+_Suppose now I have **ConfigurationOfGlorpDBX** which has a project reference to **ConfigurationOfSqueakDBX**. Is there a way to load the latests version of a project
+and it dependencies ?_
+
+In order to 'force' a load latest for a referenced (nested) project, set the versionString to the baseline version of the project. For the **ConfigurationOfGlorpDBX** project edit the SqueakDBX project entry with the #versionString: set to '1.1-baseline':
+
+```
+spec project: 'SqueakDBX' with: [
+   spec
+     className: 'ConfigurationOfSqueakDBX';
+     versionString: '1.1-baseline';
+     file: 'ConfigurationOfSqueakDBX';
+     repository: 'http://www.squeaksource.com/MetacelloRepository' ].
+```
+
+Executing the following expression will load the latest code in the ConfigurationOfGlorpDBX and the ConfigurationOfSqueakDBX projects:
+
+```
+(ConfigurationOfGlorpDBX project version: '0.9-baseline') load.
+```
+
+
+
+---
+
+## Controlling Package Initialization Order ##
+_Does package initialization in Metacello follow the **#requires:** graph? I have **Chalten-Gregorian** package that **#requires:** the package **Chalten-Core**, but **GregorianDate** class>>initialize is sent before **ChaltenDate** class>>initialize._
+
+In order to control package initialization order, you must use the #linear loadType for your project. The default loadType is #atomic.
+
+To control the loadType for a project, edit your #project method to look like the following:
+
+```
+  ^ project ifNil: [ | constructor |
+      "Bootstrap Metacello if it is not already loaded"
+      self class ensureMetacello.
+      "Construct Metacello project"
+      constructor := (Smalltalk at: #MetacelloVersionConstructor) on: self.
+      project := constructor project.
+      project loadType: #linear. "change to #atomic if desired"
+      project ]
+```
+
+---
+
+## How do I create a Metacello Configuration? ##
+To create your own Metacello configuration, follow the step by step instructionsi in the ProfStef tutorial:
+```
+ConfigurationOfMetacello project latestVersion load: #('Tutorial').
+ProfStef goOn: MetacelloDevelopmentProcess.
+```
+
+If you don't have access to ProfStef, follow [these steps](CreateMetacelloConfiguration.md).
+
+---
+
+## Why not subclass a class to start my Metacello Configuration? ##
+The short answer is that there is a bootstrapping problem. Metacello is not preloaded in Squeak or Pharo. See [this thread](http://groups.google.com/group/metacello/browse_thread/thread/c056f4e44e4523f0/) for a discussion of the issue.
+
+---
+
+## How do I load the last version of a project? ##
+The easiest way to do it is to reference to the baseline directly. Consider the following example:
+```
+(ConfigurationOfCAnalyzer project version: '1.0-baseline') load
+```
+The code above will bring all the latests version as you are not specifying them.
+A discussion is may be read on http://groups.google.com/group/metacello/browse_thread/thread/af91bb51e4ed1568/
+
+Specifying a baseline instead of a particular version makes Metacello load the last committed version. Note that specifying a package in a baseline without specifying a version in the method loads the last version also. If no #file: (or package version) is specified, the latest version of the package is loaded.
+
+---
+
+## How do I override the repository for a config? ##
+You can use #repositoryOverrides: to pass in a list of MCRepsitories to a version like the following:
+
+```
+  | version repo |
+  repo := MCDirectoryRepository new.
+  repo directory: FileDirectory on: '<path to directory>'.
+  version := ConfigurationOfXXX project version: '1.0'.
+  version repositoryOverrides: (OrderedCollection with: repo).
+  version load.
+```
+
+The list of repositories overrides every repository specified in the config. Note that automatic update of development configs doesn't honor repositoryOverrides: ... yet.
+
+See [How do I create a local cache repository for a config?](FAQ#How_do_I_create_a_local_cache_repository_for_a_config?.md) for information on creating a local cache repository.
+
+---
+
+## How do I create a local cache repository for a config? ##
+You can use #cacheRepository: to specify a repository into which mcz files are stored during a #fetch operation:
+```
+  | version cacheRepository |
+   version := (Smalltalk at: #ConfigurationOfXXX) project latestVersion.
+   cacheRepository := MCDirectoryRepository new
+         directory: (FileDirectory on: '<path to directory>').
+   version cacheRepository: cacheRepository.
+   version fetch.
+```
+See [How do use the local disk repository to install a configuration from without editting the config?](FAQ#How_do_I_override_the_repository_for_a_config?.md) for information on loading from a local cache repository.
+
+---
+
+## How diamond like dependencies are handled? ##
+Consider three configurations, for Moose, PetitParser and Glamour:
+  * Moose depends on the version default of Glamour
+  * Moose depends on version 1.0 of PetitParser
+  * PetitParser depends on version 2.0-beta of Glamour
+
+What gets loaded by Moose at the end? default or 2.0-beta?
+
+  1. Is the requested version>  the currently loaded version?
+> > - if not, the loaded version wins
+> > - if so:
+> > > 2. Have we already scheduled a load for this project?
+> > > > - if not, schedule the requested version to be loaded
+> > > > - if so:
+> > > > > 3. Is the requested version>  the scheduled version?
+> > > > > > - if not, go on
+> > > > > > - if so, schedule the requested version to be loaded

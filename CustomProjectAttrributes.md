@@ -1,0 +1,67 @@
+# Introduction #
+In a Pharo 1.3 image, the following default attributes are defined:
+```
+    #(
+      #common
+      #squeakCommon
+      #pharo
+      #'pharo1.x'
+      #'pharo1.3.x' )
+```
+Occasionally it is desirable to customize the set of attrbiutes. For example you might want to add an attribute that allows you to include packages when OmniBrowser is loaded.
+
+# Adding Custom Attributes #
+If your configuration already includes the #customProjectAttributes method, then all you need to do is to override the method to return the list of custom attributes to be included.
+
+If you want to test for the presence of OmniBrowser, you might want to implement the #customProjectAttributes method as follows:
+```
+  customProjectAttributes
+    Smalltalk at: ##OBCodeBrowser ifPresent: [:ignored | ^#(#OB) ].
+    ^#()
+```
+You can then use the custom attribute in your version specifications:
+```
+
+  baseline10: spec
+    <version: '1.0-baseline'>
+...
+    spec for: #OB do: [
+      spec
+        project: 'OmniBrowser' with: [
+          spec
+            className: 'ConfigurationOfOmniBrowser';
+            versionString: #'stable';
+            loads: #('Core' );
+            repository: 'http://www.squeaksource.com/MetacelloRepository' ].
+      spec
+        package: 'MyOBPackage' with: [ spec requires: #('OmniBrowser'). ].
+      spec
+        group: 'default' with: #('MyOBPackage') ].
+```
+and:
+```
+
+  version10: spec
+    <version: '1.0' imports: #('1.0-baseline')>
+...
+    spec for: #OB do: [
+      spec
+        project: 'OmniBrowser' with: #'stable'.
+      spec
+        package: 'MyOBPackage' with: 'MyOBPackage-me.1' ].
+```
+The effect of using the custom attribute is that your package 'MyOBPackage' will be added to the 'default' group only when OmniBrowser is already loaded in the image. Basically making the load of 'MyOBPackage' conditional on the presence of OmniBrowser.
+# Adding Custom Attributes Old configurations #
+If your configuration does not already have a #customProjectAttributes method, then you need to update the #project method to the following:
+```
+project
+    ^ project
+        ifNil: [ 
+            | constructor |
+            "Bootstrap Metacello if it is not already loaded"
+            self class ensureMetacello.
+            project := MetacelloMCProject new projectAttributes: self customProjectAttributes.	"Construct Metacello project"
+            constructor := (Smalltalk at: #'MetacelloVersionConstructor') on: self project: project.
+            project loadType: #'linear'.	"change to #atomic if desired"
+            project ]
+```

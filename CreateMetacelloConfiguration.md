@@ -1,0 +1,87 @@
+If you haven't already installed Metacello, follow these [installation instructions](DownloadMetacello.md).
+
+Before building your configuration you should take the [Metacello Tutorial](Tutorial.md).
+### Copy Template ###
+Create a configuration class for you project by copying the MetacelloConfigTemplate:
+```
+(MetacelloConfigTemplate duplicateClassWithNewName: #ConfigurationOfMyProject)
+	category: 'ConfigurationOfMyProject'.
+```
+By convention we use ''ConfigurationOf'' as the prefix for the name of the configuration class, the name of the class category, and the name of the Monticello package.
+### Create Baseline ###
+Next, create a baseline version for your project in the baselines category:
+```
+ConfigurationOfMyProject compile:
+'baseline100: spec 
+	<version: ''1.0-baseline''>
+	
+	spec for: #common do: [
+		spec blessing: #baseline.
+		spec repository: ''http://www.example.com/Example''.	
+		spec 
+			package: ''Example-Core'';
+			package: ''Example-Tests'' with: [ spec requires: ''Example-Core'' ].
+		spec
+			group: ''default'' with: #(''Core'');
+			group: ''Core'' with: #(''Example-Core'');
+			group: ''Tests'' with: #(''Example-Tests''). ].'
+classified: 'baselines'.
+```
+The #baseline version defines the structural components of your project:
+  * Example project repository:
+```
+      http://www.example.com/Example
+```
+  * list of Monticello package names:
+```
+      Example-Core and Example-Tests
+```
+  * package dependencies:
+```
+      Example-Tests depends upon Example-Core
+```
+  * 3 groups are defined: default, Core, and Tests. By convention the tests are split into a separate group and are not loaded by default (the 'default' group is used to define the list of packages to be loaded by default).
+
+The structural information doesn't change a lot over time and as you will see the baseline version is shared by many concrete versions.
+
+By convention, we name the method #baselineXXX:, where XXX relates to the baseline version being created. The method name is not relevant as the important version information is contained in the pragma, <version: '1.0-baseline'>, but a meaningful is useful in the method list.
+### Create Release Version ###
+Next, create the initial release version for your project in the versions category. Note that the 1.0-baseline is imported into version 1.0. The structural information specified in 1.0-baseline is inherited:
+```
+ConfigurationOfMyProject compile:
+'version100: spec 
+	<version: ''1.0'' imports: #(''1.0-baseline'') >
+	
+	spec for: #common do: [
+		spec blessing: #release.
+		spec 
+			package: ''Example-Core'' with: ''Example-Core-DaleHenrichs.1'';
+			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.1''].'
+classified: 'versions'.
+```
+### Test Release Version ###
+Next, test your configuration by loading version 1.0:
+```
+(ConfigurationOfMyProject project version: '1.0') load.
+```
+Now, load your tests (if you've packaged them separately:
+```
+(ConfigurationOfMyProject project version: '1.0') load: #('Tests').
+```
+### Create Development Version ###
+Next, create a development version for your project in the versions category. Note that the 1.0-baseline is imported into version1.1. The structural information specified in 1.0-baseline is inherited:
+```
+ConfigurationOfMyProject compile:
+'version110: spec 
+	<version: ''1.1'' imports: #(''1.0-baseline'') >
+	
+	spec for: #common do: [
+		spec blessing: #development.
+		spec 
+			package: ''Example-Core'' with: ''Example-Core-DaleHenrichs.3'';
+			package: ''Example-Tests'' with: ''Example-Tests-DaleHenrichs.4''].'
+classified: 'versions'.
+```
+Versions with #development blessing are not included in the list of versions returned by #latestVersion, so marking a version as #development effectively hides the version from casual users.
+
+The #development version marks the version as unstable, so you can feel free to edit the version until you are ready to release the version. Once a version is no longer marked as #development, the information in the version should not be changed. If you need to make a bugfix, you should create a new version for the project.

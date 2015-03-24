@@ -1,0 +1,76 @@
+Here’s an example script showing how I maintain a backup repository for Metacello. In this script I’m interested in fetching ConfigurationOfGofer, ConfigurationOfMetacello and all of the mcz files directly referenced by those two configurations. The cache repository (target for fetches) is http:////www.squeaksource.com/metacello:
+```
+| cacheRepository version  |
+cacheRepository := MCHttpRepository
+  location: 'http://www.squeaksource.com/metacello'
+  user: ''
+  password: ''.
+version := ConfigurationOfMetacello project version: '1.0-beta.26'.
+(version record: 'ALL') loadDirective versionDirectivesDo: [:versionDirective |
+  | p pClass |
+  versionDirective spec ~~ nil
+    ifTrue: [
+      p := versionDirective spec project.
+      pClass := p configuration class.
+      "save packages for Gofer and Metacello only"
+      (pClass == ConfigurationOfGofer or: [
+        pClass == ConfigurationOfMetacello  ])
+          ifTrue: [ | policy |
+            policy := (MetacelloLoaderPolicy new)
+                    cacheRepository: cacheRepository;
+                    ignoreImage: true;
+                    yourself.
+            "fetch Gofer or Metacello configuration"
+            p fetchProject: policy.
+            versionDirective packagesDo: [:packageDirective |
+              "skip nested configurations"
+              (packageDirective spec name beginsWith: 'ConfigurationOf')
+                ifFalse: [
+                  "fetch mcz file"
+                  packageDirective spec fetchPackage: policy ]]]]].
+```
+I maintain the secondary repository in case the GemSource repository is inaccessible. As of [Metacello 1.0-beta.27](http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.27) the secondary repository is automatically used if the primary repository is not available.
+
+Here's another example where all of the mcz packages and configs are copied to the cacheRepository:
+```
+        | cacheRepository version map | 
+        cacheRepository := MCDirectoryRepository new. 
+        cacheRepository directory: (FileDirectory on: '<path to directory>'). 
+        "need to pick up existing repository with user and password set 
+          supply user/password args" 
+        cacheRepository := MCRepositoryGroup default repositories 
+                detect: [ :each | each = cacheRepository ] 
+                ifNone: [ cacheRepository ]. 
+
+        ConfigurationOfSeaside30 project updateProject. 
+        version := ConfigurationOfSeaside30 project 
+             version: '3.0.0-rc.2'. 
+
+        "update configs that are already loaded ... 
+          might be able to skip this" 
+        map := Dictionary new. 
+        (version record: 'ALL') loadDirective 
+                versionDirectivesDo: [ :versionDirective | 
+                        versionDirective spec ~~ nil 
+                                ifTrue: [ | p| 
+                                  p:= versionDirective spec project. 
+                                  map at: p configuration put: p ] ]. 
+        map values do: [:p | p updateProject  ]. 
+
+        "point to target cacheRepository, ignoreImage so all packages 
+          are fetched and fetch away" 
+        version cacheRepository: cacheRepository. 
+        version ignoreImage: true. 
+        version fetch: 'ALL' 
+
+```
+
+You can load from the secondary repository using the following expression:
+```
+   | version repo | 
+   repo := MCDirectoryRepository new. 
+   repo directory: (FileDirectory on: '<path to directory>'). 
+   version := ConfigurationOfXXX project version: '1.0'. 
+   version repositoryOverrides: (OrderedCollection with: repo). 
+   version load. 
+```

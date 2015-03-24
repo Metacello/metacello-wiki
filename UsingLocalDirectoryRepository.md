@@ -1,0 +1,26 @@
+If you want to create a local directory cache of the mcz files and metacello configurations that you use in your own project, then you can use fetch:
+```
+| localRepository version |
+"define local repository"
+localRepository := MCDirectoryRepository new
+        directory: (FileDirectory on: '/home/dhenrich/monticello').
+version := ConfigurationOfMagritte project version: '1.2.1.3'.
+"set cache repository"
+version cacheRepository: localRepository.
+"fetch mcz file even if image is up-to-date" 
+version ignoreImage: true.
+"fetch mcz files into local repository"  
+version fetch.
+```
+At a later date you use #repositoryOverrides: to force the mcz files and metacello configurations to be loaded from the local repository:
+```
+| localRepository version |
+localRepository :=
+    MCDirectoryRepository new
+        directory: (FileDirectory on: '/home/dhenrich/monticello').
+version := ConfigurationOfMagritte project version: '1.2.1.3'.
+"set the repositoryOverrides"
+version repositoryOverrides: (Array with: localRepository).
+"do the load" 
+version load.
+```

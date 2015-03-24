@@ -1,0 +1,521 @@
+### 1.0-beta.31.1.5 ###
+  * DaleHenrichs 9/14/2012 16:49
+  * Announcements
+  * [fix Issue #73](https://github.com/dalehenrich/metacello-work/issues/73) - update Metacello-MC to a version which adds custom project attribute support to MetacelloConfigTemplate
+  * [fix Issue #114](https://github.com/dalehenrich/metacello-work/issues/114) - get all of the unit tests passing
+  * [fix Issue #120](https://github.com/dalehenrich/metacello-work/issues/120) - nested `version:imports:` cause trouble (1.0-beta.31.1.5)
+  * [fix Issue #110](https://github.com/dalehenrich/metacello-work/issues/110) - allow attribute lists in #for:do: statement
+  * [fix Issue #69](https://github.com/dalehenrich/metacello-work/issues/69) - MetacelloConfigurationTutorial undefined reference to ToolSet
+  * [fix Issue #115](https://github.com/dalehenrich/metacello-work/issues/115) - Version generated from a baseline can have empty package versions in a platform-specific section
+  * [support for Issue #129](https://github.com/dalehenrich/metacello-work/issues/129) - deployment scripts
+
+### 1.0-beta.31.1 ###
+  * DaleHenrichs 11/17/2011 13:33
+  * Announcements
+    * [1.0-beta.31.1 released](http://groups.google.com/group/metacello/browse_thread/thread/c06ffcd41e726bc9)
+  * 1.0-beta.31.1 (dkh.642);
+    * open 1.0-beta.31.1 for development
+    * GemStone/S 2.4.5 support
+    * missing OB dependency for GemStone
+  * 1.0-beta.31.1 (dkh.643);
+    * GsMonticello 0.242
+  * 1.0-beta.31.1 (dkh.644);
+    * trigger #gemstone10beta311PostLoadDoIt
+  * 1.0-beta.31.1 (dkh.645);
+    * fix [Issue 155](https://code.google.com/p/metacello/issues/detail?id=155): Notification for skipped config loads
+  * 1.0-beta.31.1 (dkh.646):
+    * help fix GemStone [Issue 307](https://code.google.com/p/metacello/issues/detail?id=307): http://code.google.com/p/glassdb/issues/detail?id=307
+  * 1.0-beta.31.1 (dkh.647):
+    * log when loading over modified package ... part of [Issue 155](https://code.google.com/p/metacello/issues/detail?id=155)
+### 1.0-beta.31 ###
+  * DaleHenrichs 10/20/2011 14:33
+  * Announcements
+    * [1.0-beta.31 released](http://groups.google.com/group/metacello/msg/3f7db67e3a5a4e0d)
+    * [Metacello 1.0-beta.31 surfaced](http://gemstonesoup.wordpress.com/2011/10/21/metacello-1-0-beta-31-surfaced/)
+  * 1.0-beta.31 (dkh.633);
+    * clean up port to GemStone
+  * 1.0-beta.31 (dkh.635):
+    * fix for GemStone version of Pharo [Issue 4613](https://code.google.com/p/metacello/issues/detail?id=4613) .... derive attributes from GemStone version string
+    * get Monticello configuration from correct repository
+  * 1.0-beta.31 (dkh.636):
+    * use Gofer 1.0.5.1 (for GemStone)
+  * 1.0-beta.31 (dkh.637):
+    * changing the comparison logic for Monticello branches. It used to be that branched Monticello packages had a funky sort order based on lenght of the branch, etc ... total malarkey really. For Metacello when a branched package is compared to a non-branched package that just just fail the comparisons and there is no "latest" relationship in either direction ... this has the effect of forcing an override of non-branched by branched and vice versa. Also if two versions differ in author name only, they compare equal ... no good can come of that situation no matter how you cut it.  Considering that I believe that GemStone is the only place where branched Monticello packages are regularly used in a configuration, I feel pretty confident that if I make GemStone happy everyone else will be happy as well.
+  * 1.0-beta.31 (dkh.638):
+    * previous checkin was too aggressive ... there needs to be a consistent package ordering scheme or else seesaw loading will ensue
+    * version number is the primary sorting key when package names are the same ... branch then author is used only when version numbers are the same
+  * Tested platforms
+    * PharoCore-1.0
+    * PharoCore-1.1.2
+    * PharoCore-1.2.2-12353
+    * PharoCore-1.3-13315
+    * PharoCore-1.4-14204
+    * Squeak 4.2
+    * GLASS 1.0-beta.8.7
+### 1.0-beta.30 ###
+  * DaleHenrichs 9/9/2011 15:48
+  * Announcements
+    * [Metacello 1.0-beta.30 unfettered](http://gemstonesoup.wordpress.com/2011/09/09/metacello-1-0-beta-30-unfettered/)
+    * [Metacello 1.0-beta.30 released](http://groups.google.com/group/metacello/browse_frm/thread/e6781e9777ae9771)
+  * Pharo1.4 attributes. tests pass, but ProfStef apparently has not been ported (yet)
+  * another round of performance improvements with significant speedups for #currentVersion, #project,  #versionStatus and friends
+  * tweak MetacelloToolBox class>>saveModifiedPackagesAndConfigurationIn:description: so that description is updated when you package updates are needed.
+  * persistent author initials can be set by defining #'GS\_tODE\_AuthorInitials' in UserGlobals with desired author initials string (in support of tODE) (GemStone only)
+  * allow configuration branches to be used in a project reference (className: is name sans branch, file: is name with branch)
+  * fix validation when branched configuration is used
+  * fix [Issue 136](https://code.google.com/p/metacello/issues/detail?id=136): load of referenced project can fail with missing version error
+  * fix [Issue 146](https://code.google.com/p/metacello/issues/detail?id=146): unrecognized SystemVersion results in assuming system is on #gemstone...
+
+### 1.0-beta.29 ###
+  * DaleHenrichs 06/7/2011 16:02
+  * Announcements
+    * [Metacello 1.0-beta.29 unlocked](http://gemstonesoup.wordpress.com/2011/06/07/metacello-1-0-beta-29-unlocked)
+    * [Metacello 1.0-beta.29 released](http://groups.google.com/group/metacello/msg/d4ebc88080eea203)
+  * SIGNIFICANT speedup for load/fetch/currentVersion operations. More caching and better algorithms.
+  * Warn about newer versions in repository. MetacelloToolBox class>>saveModifiedDevelopmentPackages:for:description:.
+  * MetacelloBrowser support.
+  * experimental support for branching configurations (mcz level branch)
+  * fix [Issue 108](https://code.google.com/p/metacello/issues/detail?id=108): Need to update Metacello (tests and Gofer config) to integrate changes from Pharo [Issue 3660](https://code.google.com/p/metacello/issues/detail?id=3660)
+  * fix [Issue 112](https://code.google.com/p/metacello/issues/detail?id=112): direct version load (upgrade) of config doesn''t update already loaded mcz files
+  * fix [Issue 115](https://code.google.com/p/metacello/issues/detail?id=115): Invalid method construction by toolbox
+  * fix [Issue 118](https://code.google.com/p/metacello/issues/detail?id=118): dirty package after merge skews currentVersion calculation
+  * fix [Issue 120](https://code.google.com/p/metacello/issues/detail?id=120): lessons methods disapppeared in Metacello-Tutorial-DaleHenrichs.24
+  * fix [Issue 122](https://code.google.com/p/metacello/issues/detail?id=122): misleading error message regarding stable versions
+  * fix [Issue 123](https://code.google.com/p/metacello/issues/detail?id=123): broken development scenario
+
+### 1.0-beta.28.3.1 ###
+  * DaleHenrichs 02/25/2011 19:42
+  * Announcements
+    * [Metacello 1.0-beta.28.3.1 released](http://groups.google.com/group/metacello/browse_frm/thread/f60f4ba506f273e7)
+  * fix [Issue 3758](https://code.google.com/p/metacello/issues/detail?id=3758): Metacello has 12 failing tests in 1.2
+  * well ... add expectedFails for the tests are failing due to the fix for Pharo [Issue 3660](https://code.google.com/p/metacello/issues/detail?id=3660)
+### 1.0-beta.28.3 ###
+  * DaleHenrichs 02/02/2011 17:07:53
+  * Announcements
+    * [Metacello 1.0-beta.28.3 released](http://groups.google.com/group/metacello/browse_frm/thread/970f66f41011d14c)
+  * fix errors in MetacelloVersionValidator class>>populateReasonCodeDescriptions and MetacelloMCVersionValidator class>>populateReasonCodeDescriptions
+  * #sort: needs to be used instead of #sorted: for GemStone3.0 compatability
+  * after sorting reconvert Arrays to OrderedCollections
+  * when saving packages and configuration, dump diffs to Transcript
+  * fix a spot where refresh of package is needed while calculating current version (when in #development)
+  * add #maglev attribute for conditional maglev code [GemStone](GemStone.md)
+### 1.0-beta.28.2 ###
+  * DaleHenrichs 1/23/2011 10:46
+  * Announcements
+    * [Metacello 1.0-beta.28.2 released](http://groups.google.com/group/metacello/browse_frm/thread/216a67b1897331a4)
+### 1.0-beta.28.1 ###
+  * DaleHenrichs 1/21/2011 09:33
+  * Announcements
+    * [Metacello 1.0-beta.28.1 released](http://groups.google.com/group/metacello/browse_frm/thread/a1823a5ce1ccd22d)
+  * fix MetacelloProject>>stableVersion and MetacelloProject>>lastVersion
+### 1.0-beta.28 ###
+  * DaleHenrichs 1/17/2011 10:12
+  * Announcements
+    * [Metacello 1.0-beta.28 released](http://groups.google.com/group/metacello/browse_frm/thread/16a842a4251c7c13)
+    * [Metacello 1.0-beta.28 unearthed](http://gemstonesoup.wordpress.com/2011/01/17/metacello-1-0-beta-28-unearthed/)
+  * pick up #versionKey from work done with Simon during ESUG 2010
+  * add MetacelloPlatform>>primeStackCacheWith:doing: from work done with Simon during ESUG 2010
+  * deprecate MetacelloPlatform>>primeStackCacheFor:doing:defaultDictionary:
+  * add primeStackCache tests
+  * dynamic caching for 5x speedup of #currentVersion
+  * standard Pharo version attributes: #''pharo1.x'', #''pharo1.0.x'', #''pharo1.1.x'', #''pharo1.2.x''
+  * throw an error when a version is not found
+  * collapse running zeroes in a version number in absence of a numeric element
+  * introduce MetacelloBaseConfiguration added so that Configurations can have a superclass (not yet ready for use)
+  * introduce symbolic versions.
+    * #development, #stable, and #bleedingEdge are standard versions.
+    * a default is defined for #bleedingEdge
+  * fix [Issue 100](https://code.google.com/p/metacello/issues/detail?id=100): http://code.google.com/p/metacello/issues/detail?id=100 "last block wins when there are duplicate attribute blocks"
+  * added two new commands for OB-Metacello: ''Validate Configuration'' and ''ValidateConfiguration Version''
+  * MetacelloToolBox added
+  * transferred tutorial lessons to ProfStef
+  * convert OB-Metacello to use MetacelloToolbox API
+  * update comments for api documentation
+  * help browser documentation loaded as part of default group (for Pharo....for now)
+  * speed up running of tests ... 3x faster
+  * postLoad and preLoad doit behavior cleaned up with regards to overriding behaviour using nil arg (i.e.,  stop preload/postload doits)
+  * add Squeak attributes: #''squeak3.10.x'', #''squeak4.1.x'', and #''squeak4.2.x''
+  * fix pharo [bug 3516](https://code.google.com/p/metacello/issues/detail?id=516): http://code.google.com/p/pharo/issues/detail?id=3516 "Failing tests in MetaCello"
+  * OB-Metacello commands functional in Pharo1.2
+### 1.0-beta.27.5 ###
+  * DaleHenrichs 11/11/2010 11:29
+  * fixes needed for new bootstrapping scheme in GemStone3.0
+  * stop using deprecated in Pharo1.2 methods (sortBy:)
+### 1.0-beta.27.4 ###
+  * DaleHenrichs 9/2/2010 13:15
+  * Announcements
+    * [Metacello 1.0-beta.27.4 released](http://groups.google.com/group/metacello/browse_frm/thread/363e94e417eb52a7)
+  * fix bugs when trying to stash packages and configurations into a repository.
+  * fix [Issue 79](https://code.google.com/p/metacello/issues/detail?id=79) "OB-Metacello should use MetacelloMCProjectSpec>>loadVersion: style default packages instead of lastMetacelloVersionLoad"
+  * best fix for [Issue 92](https://code.google.com/p/metacello/issues/detail?id=92) "Trait does not understand #isMetacelloConfig"
+  * fix [Issue 93](https://code.google.com/p/metacello/issues/detail?id=93) "poor error message when failing to resolve a package in a repository"
+  * fix [Issue 94](https://code.google.com/p/metacello/issues/detail?id=94) "lastVersion vs latestVersion"
+  * fix [Issue 95](https://code.google.com/p/metacello/issues/detail?id=95) "Infinite project reference loop"
+
+### 1.0-beta.27.3 ###
+  * DaleHenrichs 7/29/2010 15:56
+  * Announcements
+    * [Metacello 1.0-beta.27.3 released](http://groups.google.com/group/metacello/msg/aab513445b201a6d)
+  * fix for [Issue 90](https://code.google.com/p/metacello/issues/detail?id=90): http://code.google.com/p/metacello/issues/detail?id=90 "includes: aglgorithm not aggressive enough"
+  * fix for [Issue 92](https://code.google.com/p/metacello/issues/detail?id=92): http://code.google.com/p/metacello/issues/detail?id=92 "Trait does not understand #isMetacelloConfig"
+### 1.0-beta.27.2 ###
+  * DaleHenrichs 7/5/2010 09:31
+  * Announcements
+    * [Metacello 1.0-beta.27.2 released](http://groups.google.com/group/metacello/msg/5b15241e041d7305)
+  * OBCmdMetacello >> isActive used #and:and which is deprecated in Pharo 1.1rc4
+### 1.0-beta.27.1 ###
+  * DaleHenrichs 6/24/2010 20:06
+  * Announcements
+    * [Metacello 1.0-beta.27.1 released](http://groups.google.com/group/metacello/browse_frm/thread/8986c7228e481c1e)
+  * fix [Issue 86](https://code.google.com/p/metacello/issues/detail?id=86) "project references that are supersets of a loaded project reference appear to be partially loaded"
+### 1.0-beta.27 ###
+  * DaleHenrichs 6/15/2010 11:02
+  * Announcements
+    * [Metacello 1.0-beta.27 released](http://groups.google.com/group/metacello/browse_frm/thread/79fd63406a17b111)
+    * [Metacello 1.0-beta.27 unfurled](http://gemstonesoup.wordpress.com/2010/06/15/metacello-1-0-beta-27-unfurled/)
+    * [(ANN) Metacello 1.0-beta.27](http://lists.gforge.inria.fr/pipermail/pharo-project/2010-June/028369.html)
+  * Updated Wiki Pages
+    * [API reference](APIReference.md)
+    * [#ensureMetacello implementation](EnsureMetacello.md)
+  * include Metacello-Help from Torsten
+  * test case confirming that group name can be used "anywhere that project/package name can be used"
+  * fix [Issue 85](https://code.google.com/p/metacello/issues/detail?id=85): "Metacello should load from alternate repository"
+  * pick up OB 1.1.4 for Pharo 1.1 compat
+  * redundant repository for Gofer too
+### 1.0-beta.26.3 ###
+  * DaleHenrichs 6/11/2010 11:26
+  * Announcements
+    * [Metacello 1.0-beta.26.3 released](http://groups.google.com/group/metacello/browse_frm/thread/0ca7c089d0903c05#)
+  * fix [Issue 81](https://code.google.com/p/metacello/issues/detail?id=81) "wrong mcz file can be loaded when mcz file has Monticello dependencies"
+  * fix [Issue 82](https://code.google.com/p/metacello/issues/detail?id=82) "Metacello and (Windows) file repositories"
+### 1.0-beta.26.2 ###
+  * DaleHenrichs 5/21/2010 16:26
+  * Announcements
+    * [1.0-beta.26.2 released](http://groups.google.com/group/metacello/msg/447007ac7403e2dd)
+  * Pharo1.1 compat for OB-Metacello
+  * fix [Issue 77](https://code.google.com/p/metacello/issues/detail?id=77) "later version of Project reference not loaded after old version already loaded"
+  * add MetacelloFetchingMCSpecLoader>>printOn: that prints out loadDirective, thus restoring correct #printOn: behavior for MetacelloNullRecordingMCSpecLoader since tutorial depends upon it..
+### 1.0-beta.26.1 ###
+  * DaleHenrichs 5/12/2010 12:19
+  * Announcements
+    * [1.0-beta.26.1 released](http://groups.google.com/group/metacello/msg/f930b9ef5d4db174)
+  * fix and test coverage for bug involving a postload doit with linear load nested inside an atomic load
+  * when loading a project reference, do not load mcz files that are older than the currently loaded mcz files (implicit version request). Older files will be loaded if directly referenced from the project being loaded (explicit version request).
+  * add RETRY logic to handle HTTP droppage
+### 1.0-beta.26 ###
+  * DaleHenrichs 4/12/2010 14:27
+  * Announcements
+    * [1.0-beta.26 released](http://groups.google.com/group/metacello/browse_frm/thread/1d6a5ccb46167bcf)
+    * [Metacello 1.0-beta.25 forged](http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged)
+  * Documentation
+    * Fetch and Record
+      * [Determining which mcz files will be loaded](DeterminingWhichMCZFileWillBeLoaded.md)
+      * [Programmatic fetch/load](ProgrammaticFetchLoad.md)
+      * [Maintaining a secondary repository for Metacello](MaintainingSecondaryRepository.md)
+      * [Using a local directory repository](UsingLocalDirectoryRepository.md)
+  * put comment in MetacelloMCProject>>#updateProject to warn about refreshing instance.
+  * helper messages: #cacheRepository: and #ignoreImage: added to MetacelloMCVersion
+  * refactor directive hierarchy for post/pre Load directives add #postLoadDo: and #preLoadDo: to round out API
+  * clean up null recording loader with respect to fetch and post/pre load doits
+  * directives weren't being created correctly for post/pre load doits on packages .... now they are
+  * ConfigurationOfMetacello class>>alternateEnsureMetacello to be used if GemSource repository is inaccessible
+  * assorted tests
+  * #fetchPackage: added to MetacelloPackageSpec taking a MetacelloLoaderPolicy like #fetchProject: for MetacelloMCProjectSpec
+### 1.0-beta.25.1 ###
+  * Dale Henrichs 3/23/2010 19:16
+  * fix [Issue 67](https://code.google.com/p/metacello/issues/detail?id=67) "blessing not generated by MetacelloVersionConstructor>>spawnPackageMethodIn: category: named: sourceVersion: targetVersion: blessing:"
+### 1.0-beta.25 ###
+  * DaleHenrichs 3/23/2010 15:24
+  * Announcements
+    * [1.0-beta.25 forged](http://gemstonesoup.wordpress.com/2010/04/12/metacello-1-0-beta-25-forged)
+    * [1.0-beta.25 released](http://groups.google.com/group/metacello/browse_frm/thread/10a08c7c3eadeecd)
+  * Updated Pages
+    * DownloadMetacello
+    * [FAQ](http://code.google.com/p/metacello/wiki/FAQ)
+    * MetacelloTools
+  * pick up Gofer 1.0.2
+  * fix [Issue 10](https://code.google.com/p/metacello/issues/detail?id=10) "''save packages'' should recurse through projects"
+  * fix [Issue 24](https://code.google.com/p/metacello/issues/detail?id=24) "Gofer #fetch support"
+  * fix [Issue 31](https://code.google.com/p/metacello/issues/detail?id=31) "Handle boundary between #atomic and #linear loads ..."
+  * fix [Issue 32](https://code.google.com/p/metacello/issues/detail?id=32) "Connect repositories as MCServerDirectory rather than MCDirectory"
+  * fix [Issue 48](https://code.google.com/p/metacello/issues/detail?id=48) "Should have #loadReport message for loader..."
+  * fix [Issue 56](https://code.google.com/p/metacello/issues/detail?id=56) "save configurtion that uses Gofer>>commit:"
+  * fix [Issue 57](https://code.google.com/p/metacello/issues/detail?id=57) "specificy method category for version category in Metacello version constructor"
+  * fix [Issue 58](https://code.google.com/p/metacello/issues/detail?id=58) "make #file: optional in project reference specification"
+  * fix [Issue 59](https://code.google.com/p/metacello/issues/detail?id=59) "repository overrides should be used for MetacelloPackageSpec>>load"
+  * fix [Issue 60](https://code.google.com/p/metacello/issues/detail?id=60) "bypass progress bars...."
+  * fix [Issue 64](https://code.google.com/p/metacello/issues/detail?id=64) "update package methods has extra file entry"
+  * fix [Issue 66](https://code.google.com/p/metacello/issues/detail?id=66) "loading latest broken by new code in 1.0-beta.24" [MERGE](MERGE.md)
+  * #fetch and #fetch: added to MetacelloMcVersion. #fetch and #fetch: correspond to #load and #load: but only download the mcz files to a cacheRepository (controlled by version #loadPolicy)
+  * #fetchProject, #fetchProject:, #updateProject: added to support direct fetch of a project (ala #updateProject)
+  * implement version #record/#record:
+  * implement version #silently: for [Issue 60](https://code.google.com/p/metacello/issues/detail?id=60)
+  * implement non-interactive commit support using gofer: MetacelloMCProject>>goferCommitProject:, MetacelloPackageSpec>>goferCommitPackage:
+### 1.0-beta.24 ###
+  * DaleHenrichs 2/18/2010 15:44
+  * Announcements
+    * [1.0-beta.24 released](http://groups.google.com/group/metacello/browse_frm/thread/6501b281e49f0786)
+  * fix a bug in MetacelloMCProjectSpec>>compareCurrentVersion:targetVersionStatus:using: related when calculating current version against a non-standard loader
+  * tweak the loader API a bit for GemStone (performance improvements)
+  * tweak transcript info for atomic load
+  * start using Gofer 1.0.1
+  * adjust conditions that lead to a load conflict error
+### 1.0-beta.23 ###
+  * 'DaleHenrichs 2/9/2010 11:33'
+  * Announcements
+    * [1.0-beta.23 released](http://groups.google.com/group/metacello/browse_frm/thread/448ef29d979c32f7)
+  * port to Squeak3.9.1-final-7075, Squeak3.10.2-7179-basic, Squeak3.10.2-Trunk-091128 and Squeak3.11-8931-alpha
+  * add #unloadMetacello to MetacelloConfigTemplate
+  * fix [Issue25](https://code.google.com/p/metacello/issues/detail?id=25) "currentVersion cache is too sticky ..."
+  * full frontal assault on findCurrentVersion and currentVersion algorithms ... corner implementation with a brigage of tests
+  * fix a bug in GoferResolvedReference>>compare:using: related to branch comparison found during frontal assault!
+  * version #versionStatus provides additional info for using currentVersion
+  * deleted a bunch of methods (redundant,  confusing, not interesting and no longer used):
+    * MetacelloVersion>>isCurrentCovering:
+    * MetacelloProject>>currentVersionComparison:to:covering:
+    * MetacelloProject>>currentVersionCovering:
+    * MetacelloProject>>findCurrentVersion
+    * MetacelloMCVersionSpec>>isCurrentCovering:
+    * MetacelloMCVersionSpec>>isPartiallyCurrentAgainst:
+    * MetacelloMCProjectSpec>>isCurrent
+    * MetacelloProjectReferenceSpec>>compareVersionForLoad:using:
+    * MetacelloAbstractPackageSpec>>compareVersionForLoad:using:
+    * MetacelloMCVersionSpec>>isPartiallyCurrentFor:
+    * MetacelloProjectReferenceSpec>>isPartiallyCurrentUsing:
+    * MetacelloMCProjectSpec>>comparePartialVersion:using:
+    * MetacelloProject>>partialVersionComparison:to:covering:
+    * MetacelloMCProject>>projectPackage
+    * MetacelloMCVersionSpec>>currentVersionComparison:covering:
+    * MetacelloMCVersion>>currentVersionComparison:covering:
+    * MetacelloVersion>>currentVersionComparison:covering:
+    * MetacelloProjectReferenceSpec>>isPartiallyCurrentUsing:
+    * MetacelloMCProjectSpec>>compareVersionForLoad:using:
+    * MetacelloMCVersionSpec>>isCurrent
+    * MetacelloPackageSpec>>compareVersion:using:
+    * MetacelloPackageSpec>>isCurrentUsing:
+    * MetacelloMCProjectSpec>>compareVersion:using:
+    * MetacelloMCProjectSpec>>isCurrentUsing:
+    * MetacelloAbstractPackageSpec>>isCurrentUsing:
+    * MetacelloGroupSpec>>isCurrentUsing:
+    * MetacelloProjectReferenceSpec>>isCurrentUsing:
+    * MetacelloProject>>currentVersionComparison:to:
+    * MetacelloVersion>>isCurrent
+    * MetacelloVersionSpec>>isCurrent
+### 1.0-beta.22 ###
+  * 'DaleHenrichs 1/25/2010 14:19'
+  * Announcements:
+    * [1.0-beta.22 released](http://groups.google.com/group/metacello/browse_frm/thread/81ae8c1aec5b39f7)
+    * [Metacello 1.0-beta.22 launches](http://gemstonesoup.wordpress.com/2010/01/25/metacello-1-0-beta22-launches/)
+  * fix [Issue 36](https://code.google.com/p/metacello/issues/detail?id=36) "Use ConfigurationOfOB for Metacello"
+  * fix [Issue 49](https://code.google.com/p/metacello/issues/detail?id=49) "occassional load of older versions of projects"
+  * fix [Issue 52](https://code.google.com/p/metacello/issues/detail?id=52) "preload/postload for groups and projects"
+  * MetacelloMCVersion>>resolveToLoadableSpecs: added to supplement query API
+  * support for Metaceller
+  * fix a bug in MetacelloMCProjectSpec>>resolveToAllPackagesIn:visited: when the project spec doesn't have a versionString specified
+  * ProfStef tutorial (MetacelloCreateConfigurationTutorial)
+  * latest Gofer (Gofer-Core-lr.116 and Gofer-Tests-lr.115)
+### 1.0-beta.21 ###
+  * 'DaleHenrichs 1/16/2010 12:47'
+  * Announcements:
+    * [1.0-beta.21 released](http://groups.google.com/group/metacello/browse_frm/thread/9e1a3144fd442180)
+  * fix new tests so that they run on GemStone and don't collide with existing packages
+  * fix [Issue 41](https://code.google.com/p/metacello/issues/detail?id=41) "Trouble with nested ProgressInitiationException in certain circumstances"
+  * fix [Issue 42](https://code.google.com/p/metacello/issues/detail?id=42) "ConfigurationOfSeaside28 should use supplyingAnswers:"
+  * fix [Issue 43](https://code.google.com/p/metacello/issues/detail?id=43) "Eliminate use of #versionInfoFor:from:do: "
+  * Metacello now uses Gofer for all of its interactions with Monticello (a few pockets of workingCopy still exist:)
+  * pick up latest Gofer-Core-lr.115 and Gofer-Tests
+  * some more version caching for speed
+  * better workingCopy resolution for MetacelloCachingGoferResolvedReference
+  * adjust tests  - no longer inheriting pragmas ... too expensive
+  * introduce valueSupplyingMetacelloAnswers: to work around Pharo [Issue 1824](https://code.google.com/p/metacello/issues/detail?id=1824) http://code.google.com/p/pharo/issues/detail?id=1824
+### 1.0-beta.20 ###
+  * 'DaleHenrichs 1/14/2010 09:45'
+  * Announcements:
+    * [1.0-beta.20 released](http://groups.google.com/group/metacello/browse_frm/thread/aa22e8b4b7515299)
+  * tests for nested #for:do: statements
+  * fix [Issue 40](https://code.google.com/p/metacello/issues/detail?id=40) "Tight package/repository coordination lost"
+  * take full advantage of Gofer repository caching
+  * more tests to ensure expected loading behavior
+  * typos fixed in Tutorial (Torsten)
+### 1.0-beta.19.1 ###
+  * 'dkh 1/8/2010 14:45'
+  * fix [Issue 39](https://code.google.com/p/metacello/issues/detail?id=39) "WB at end of ConfigurationOfPharo load"
+### 1.0-beta.19 ###
+  * 'dkh 1/8/2010 10:34'
+  * Announcements:
+    * [Metacello 1.0-beta.19 escapes](http://gemstonesoup.wordpress.com/2010/01/08/metacello-1-0-beta-19-escapes/)
+    * [1.0-beta.19 released](http://groups.google.com/group/metacello/browse_frm/thread/99f7c1bd5775d183)
+  * **Update the class-side #ensureMetacello method for you configurations:** [ensureMetacello implementation](http://code.google.com/p/metacello/wiki/EnsureMetacello)
+  * "Pure" Refactoring of MetacelloVersionConstructor>>on: (Danie Roux)
+  * fix [Issue 7](https://code.google.com/p/metacello/issues/detail?id=7) "#repositoryOverrides: should be in MetacelloMCVersion"
+  * fix [Issue 13](https://code.google.com/p/metacello/issues/detail?id=13) "more than one repository per package"
+  * fix [Issue 16](https://code.google.com/p/metacello/issues/detail?id=16) "version level predoit/postdoit"
+  * fix [Issue 20](https://code.google.com/p/metacello/issues/detail?id=20) "validation in #postLoadDoIt:/#preLoadDoit:"
+  * fix [Issue 28](https://code.google.com/p/metacello/issues/detail?id=28) "supplyingAnswers: attribute for packages"
+  * fix [Issue 30](https://code.google.com/p/metacello/issues/detail?id=30) "Imported version names"
+  * fix [Issue 33](https://code.google.com/p/metacello/issues/detail?id=33) "ensureMetacello should do full bootstrap"
+  * fix [Issue 38](https://code.google.com/p/metacello/issues/detail?id=38) "Metacello load fails on Squeak"
+  * port Gofer-lr.109 to GemStone
+  * stop caching packages in Pharo ... can cause trouble if repository off-line
+  * fix problems with GemStone Metacello when runnng without OB
+  * make error handler for #do:displaying: a little more specific
+  * fix a problem when a second version of a package is being requested during atomic load. Must override with newer package.
+  * run with pre and post 10504 Pharo images
+  * see [1.0-beta.19.1](http://code.google.com/p/metacello/wiki/10betaVersionDescriptions#1.0-beta.19.1)
+### 1.0-beta.18 ###
+  * 'dkh 12/29/2009 16:17'
+  * **Update the class-side #ensureMetacello method for you configurations:** [ensureMetacello implementation](http://code.google.com/p/metacello/wiki/EnsureMetacello)
+  * implement MetacelloVersion>>isPossibleBaseline
+  * fix currentVersion when no packages or projects are in play
+  * fix a Spawn New Version bug
+  * allow for a nil #versionString spec in projects
+  * fix [Issue 14](https://code.google.com/p/metacello/issues/detail?id=14) Ftp repository for Squeak only
+  * fix [Issue 18](https://code.google.com/p/metacello/issues/detail?id=18) #linear default loadType
+  * fix [Issue 21](https://code.google.com/p/metacello/issues/detail?id=21) optional blessing for Spawn New Version
+  * fix [Issue 22](https://code.google.com/p/metacello/issues/detail?id=22) Better filter for Branch blessing and lastVersion
+  * fix [Issue 23](https://code.google.com/p/metacello/issues/detail?id=23) Use Gofer batch commit for Save Packages
+  * fix [Issue 26](https://code.google.com/p/metacello/issues/detail?id=26) New version of Gofer breaks Metacello
+  * port to latest version of Gofer (Gofer-lr.109)
+### 1.0-beta.17 ###
+  * 'dkh 12/9/2009 11:13'
+  * fix a branch name problem for working copies
+  * fine tune the 'Update Package Methods' algorithm
+  * fix [Issue 3](https://code.google.com/p/metacello/issues/detail?id=3) 'Save Packages' save new
+  * fix [Issue 12](https://code.google.com/p/metacello/issues/detail?id=12) Wait cursor during load
+  * fix [Issue 14](https://code.google.com/p/metacello/issues/detail?id=14) Ftp repository for Pharo & Squeak
+  * fix [Issue 19](https://code.google.com/p/metacello/issues/detail?id=19) Bug in Spawn New Version
+### 1.0-beta.16 ###
+  * 'dkh 12/01/09 16:22:42'
+  * put Gofer package in Metacello repository
+### 1.0-beta.15 ###
+  * 'dkh 11/24/2009 09:48'
+  * fix ''Spawn New Version'' command
+  * tweak packageSpec shortcut printing - fine tune use of #overrides:
+### 1.0-beta.14 ###
+  * 'dkh 11/16/2009 15:02'
+  * improve handling of #development project references. Loader is responsible for ensuring that #development projects have latest package loaded.
+  * use latest Gofer (Gofer-lr.83)
+  * skip automatic loading of packages when working copy #needsSaving
+  * better loop termination logic for packageSpecsInLoadOrder
+  * fix logic for loading latest version of a project when versionString is not set (use latest, then last version)
+  * collect repositories from just the packages (ignoring projects) ... affects load latest logic
+  * fix #promptForVersion: ... include #development versions in listing
+  * GemStone attributes, now may include: #gemstone #'gs2.x' #'gs2.3.x' #'gs2.4.x' and #'gs3.x' for finer grainded resolution of Stone version
+  * fix a package loading logic bug found by Doru (loading latest)
+### 1.0-beta.13 ###
+  * 'dkh 11/5/2009 15:46'
+  * fix a bug in current version algorithm
+  * improve current version algorithm ... project only configurations handled
+  * pick up latest Gofer
+### 1.0-beta.12 ###
+  * [announcement](http://gemstonesoup.wordpress.com/2009/11/03/metacello-1-0-beta-12-unwrapped/)
+  * 'dkh 11/03/09 11:07:27'
+  * convert to using ConfigurationOfxxx naming convention
+  * fix updateRepositories bug (update repository for loaded packages only)
+  * #repositoryFor:from: ... more GLASS support
+  * record last version loaded and list of packages loaded for each configuration (optional)
+  * use last list of packages loaded last when loading packages using tools
+  * improve promptForVersion algorithm to show current version and reduce version list to logical choices
+  * fix version number bug when version is empty. add tests
+### 1.0-beta.11 ###
+  * [announcement](http://gemstonesoup.wordpress.com/2009/10/31/metacello-1-0-beta-11-debuts/)
+  * 'dkh 10/31/09 11:03:31'
+  * GemStone/GLASS support'.
+  * pick up latest Gofer package
+  * fix a project version loading bug
+  * printing fix
+  * fix an update packages bug
+  * adjust working version package name calculation
+  * fix current version package name calculation (http://code.google.com/p/metacello/issues/detail?id=4)
+  * doits bugfix
+  * fix a project reference project package bug
+  * add ''Load Latest Packages'' OB command
+  * remove Samples group
+  * save packages fix
+  * must be able to load packages that use directory repositories
+### 1.0-beta.10 ###
+  * dkh 10/25/2009 11:34'
+  * GemStone-specific mods
+  * improve error message for missing import
+  * fix a couple of bugs in spawn new version
+  * if versionString is not specified in project reference, use #latestVersion of the project
+  * 'Update Package Method' command updates the versionString for project reference to #currentVersion of the project
+  * 'Spawn New Version' command spawns entry for proejct reference using #currentVersion of the project
+  * latest version of configuration package is loaded if the project reference refers to a version whose blessing is #development
+  * refactor #saveProject
+  * add #transact: to platform to support GemStone optional transactions
+  * define querying protocol (public access)
+  * use literal arrays instead of array constructors _everywhere_
+  * clean up printing
+  * refine querying API
+  * extend tutorial to cover querying API
+### 1.0-beta.9 ###
+  * second cut at package query api for MetacellMCVersion requested by Simon, Read the method comments for documentation:
+    * groups
+    * packages
+    * projects
+    * packagesForSpecNamed:
+    * allPackagesForSpecNamed:
+  * add #repository:username:password: to configuration API in support of repositories that require authentication.
+### 1.0-beta.8 ###
+  * protect senders of asNumber with error handler
+### 1.0-beta.7 ###
+  * [announcement](http://gemstonesoup.wordpress.com/2009/10/19/metacello-tutorial-updated/)
+  * finish project ref tutorial
+### 1.0-beta.6 ###
+  * Bugfixes
+    * asNumber throws Error (as of 10487) and Errors are not resumable
+    * bump up ensureMetacello methods to use versions from 1.0-beta.6
+    * use latest version of Gofer
+### 1.0-beta.5 ###
+  * GemStone port
+  * fix a bug in #project:copyFrom:with:
+  * rewrite null loader to use IVs for recording state
+  * get started on project ref tutorial
+  * ensure that imported versions exist
+  * use Gofer for direct loading of packages like from pojects, since configuration must be loaded immediately whether or not w are doing atomic/linear loads
+  * add project load test (coverage for Doru''s bug report)
+### 1.0-beta.5-baseline ###
+  * Extensions to 1.0-beta.3-baseline:
+    * Samples group includes Seaside-Metacello-Configuration and GemTools-Configuraton (Metacello-Configuration should not be included ... it is always present)
+### 1.0-beta.4 ###
+  * Bugfixes:
+    * add platform attribute tests
+    * fix bug in project reference
+    * need to pass project into constructor (sometimes)
+    * duplication of #projectAttributes
+    * correct update package logic when package branches involved (`<package name>.<branch name>-<author>.<version number>`)
+### 1.0-beta.3 ###
+  * Bugfixes:
+    * update to latest Gofer (Gofer-lr.67)
+    * fix a package overrides: bug
+    * pull in some old tests that still apply
+    * recast tutorial to new API plus tutorial tests
+    * fix platform attribute bug
+    * use strings instead of symbols for imports
+    * class-side project
+    * fix doit bug
+    * tools load ''ALL''
+    * deactive ''Update Repositories'' command
+### 1.0-beta.3-baseline ###
+  * Extensions to 1.0-beta.0-baseline:
+    * ''default'' group is just the core ... class-side loaders load ''ALL'' by default
+    * pull in some old tests that still apply
+    * combine Metacello-ConfigTests into Metacello-TestsMC
+    * rename Metacello-ReferenceTests to Metacello-TestsReference
+    * recast tutorial to new API
+    * add Samples group (Metacello-Configuration [duh](duh.md) and Seaside-Metacello-Configuration
+### 1.0-beta.2 ###
+  * Bugfixes:
+    * change name of method used for bootstrapping to avoid confusion with methods actually used for loading.
+    * port to Squeak (Squeak3..10.10.2-Trunk-090912)
+### 1.0-beta.1 ###
+  * Bugfixes:
+    * change base version name for spawn method
+    * make sure author and timestamp included by spawn
+    * fix file duplication for spawn method
+### 1.0-beta.0 ###
+  * Beta release introducing the shiny new API
+### 1.0-beta.0-baseline ###
+  * Default configuration ... loads latest versions of all packages
+<a title='xxx'>hello</a>
